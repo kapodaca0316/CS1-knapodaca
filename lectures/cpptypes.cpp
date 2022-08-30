@@ -9,11 +9,15 @@ This is demonstrating c++ data types
 using namespace std;
 
 int main() {
-    char myChar;
+    //char myChar;
 
-    myChar = 'K';
+    //myChar = 'K';
 
-    cout <<myChar <<endl;
+    int myNum;
+
+    myNum = 27;
     
+    cout <<myNum <<endl;
+
     return 0;
 }
