@@ -15,7 +15,7 @@ int main() {
 
     int myNum;
 
-    myNum = 27;
+    myNum = '27';
     
     cout <<myNum <<endl;
 
