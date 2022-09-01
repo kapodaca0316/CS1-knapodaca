@@ -11,9 +11,9 @@ using namespace std;
 
 int main() {
     //char myChar;
-    int myChar;
+    float myChar;
 
-    myChar = 42;
+    myChar = 42.12345;
 
     cout << "My char is: " << myChar << endl; 
 
