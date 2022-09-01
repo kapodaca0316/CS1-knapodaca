@@ -10,12 +10,16 @@ This will demonstrate various types
 using namespace std;
 
 int main() {
-    //char myChar;
-    float myChar;
+   int num1, num2;
+   int total; 
 
-    myChar = 42.12345;
+   num1 = 9;
+   num2 = 3;
 
-    cout << "My char is: " << myChar << endl; 
+   total = num1 % num2;
+
+   cout << num1 << " % " << num2 << " = "
+        << total << endl;
 
     return 0;
 }
