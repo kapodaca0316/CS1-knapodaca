@@ -10,9 +10,10 @@ This will demonstrate various types
 using namespace std;
 
 int main() {
-    char myChar;
+    //char myChar;
+    int myChar;
 
-    myChar = 'N';
+    myChar = 42;
 
     cout << "My char is: " << myChar << endl; 
 
