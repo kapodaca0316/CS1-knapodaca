@@ -22,7 +22,7 @@ int main()
     //FIXME3: declare a variable to store name
     string yourName = "Kyra Apodaca"; //FIXME4: prompt user to enter their name and store the value in variable
     
-    cout << "Nice meeting you," << yourName << "!" << endl; //FIXME5: greet the name using the variable as the following output
+    cout << "Nice meeting you, " << yourName << "!" << endl; //FIXME5: greet the name using the variable as the following output
     //must output: Nice meeting you, <name>! #fixed#
 
     cout << "Hope you like my Tom & Jerry ASCII art...\n\n";
