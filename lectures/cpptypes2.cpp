@@ -6,20 +6,14 @@ This will demonstrate various types
 */
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-   int num1, num2;
-   int total; 
+   string firstName = "Kyra";
 
-   num1 = 9;
-   num2 = 3;
-
-   total = num1 % num2;
-
-   cout << num1 << " % " << num2 << " = "
-        << total << endl;
+cout << "Hello " << firstName << "!" << endl;
 
     return 0;
 }
