@@ -19,4 +19,4 @@
 | **Status** | completed |
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/ascii/ASCIIArt.cpp |
 | **Self Grade** | 90/100 |
-| **Notes** | typed the given code stub; need to fix all the fixmes |
+| **Notes** | typed the given code stub; fixed all the fixmes |
