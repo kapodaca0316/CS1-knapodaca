@@ -10,7 +10,7 @@ CXX = g++
 CXXFLAGS = -c -g -Wall -std=c++17
 
 # the build target executable file; .exe is not required
-PROGRAM = ASCIIArt.cpp
+PROGRAM = ASCIIArt.out
 
 # list all .cpp files separated by space
 CPPFILES = ASCIIArt.cpp
@@ -19,9 +19,8 @@ CPPFILES = ASCIIArt.cpp
 # first compile each file to object file
 # then make a single binary program
 all:
-	# g++ -c -g -Wall -std=c++17 ASCIIArt.cpp
+	
 	$(CXX) $(CXXFLAGS) $(CPPFILES)
-	# g++ -o ASCIIArt.out *.o
 	$(CXX) -o $(PROGRAM) *.o
 
 # make clean rule
