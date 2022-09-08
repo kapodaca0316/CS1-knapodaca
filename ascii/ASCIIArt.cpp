@@ -15,7 +15,6 @@
 #include <string> //library for string data
  
 using namespace std; //resolve cout, cin, and endl names
-using std::cin;
 
 //main entry point of the program
 int main()
@@ -50,7 +49,7 @@ int main()
     //Note: You can add more lines or print more ASCII arts of your choice if you'd like...
 
     cout << "Good bye... hit enter to exit the program: " << '\n';
-    cin.get();
+    cin.ignore();
     //FIXME10: make the console wait for user input #fixed#
 
     return 0; //exit program by returning 0 status to the system
