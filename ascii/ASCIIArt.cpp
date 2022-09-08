@@ -51,6 +51,7 @@ int main()
     cout << "Good bye... hit enter to exit the program: " << '\n';
     cin.ignore();
     //FIXME10: make the console wait for user input #fixed#
+    //grabbed from: https://stackoverflow.com/questions/21257544/c-wait-for-user-input
 
     return 0; //exit program by returning 0 status to the system
 }
