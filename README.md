@@ -12,6 +12,7 @@
 ### Lab #1
 
 | **Name** | Kyra Apodaca|
+|:---|:---|
 | **Name** | 1 - Std IO Lab |
 | **Description** | Lab covering standard input and output |
 | **Due Date** | 09/09/2022 |
