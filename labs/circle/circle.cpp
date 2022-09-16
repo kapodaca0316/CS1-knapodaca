@@ -2,7 +2,7 @@
 Circle Lab
 Name: Kyra Apodaca
 CSCI 111
-Date: FIXME2
+Date: 9/14/2022 FIXME2 #fixed#
  
  This program prompts the user to enter the radius of a circle.
  It then calculates and displays its area and circumference.
