@@ -21,6 +21,17 @@
 | **Self Grade** | 90/100 |
 | **Notes** | typed the given code stub; fixed all the fixmes |
 
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | Circle- Maths and Std IO Lab |
+| **Description** | Lab covering standard input and output and cmath calculations |
+| **Due Date** | 09/20/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/ascii/ASCIIArt.cpp |
+| **Self Grade** | 95/100 |
+| **Notes** | typed the given code stub; fixed all the fixmes |
+
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
