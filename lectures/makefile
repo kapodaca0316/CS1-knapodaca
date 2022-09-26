@@ -34,4 +34,4 @@ run:
 	./$(PROGRAM)
 
 test:
-	./$(TEST)	
+	./$(PROGRAM) test	
