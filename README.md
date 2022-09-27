@@ -52,4 +52,4 @@
 | **Status** | completed |
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/triangle/main.cpp |
 | **Self Grade** | 95/100 |
-| **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse the last side entered into the program. There is a better way to write that, I just don't know what that would be |
+| **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse and entered last into the program. There is a better way to write that, I just don't know what that would be |
