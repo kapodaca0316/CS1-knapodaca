@@ -18,6 +18,7 @@ Step 5: Print out results of calculations with brief description
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <cassert>
 
 using namespace std;
 
@@ -30,8 +31,8 @@ void greetUser (string &name){
     cout << "Hello " << name << "! Welcome to my Triangle Calculator!" << endl;
 }
 
-int triangleSide() {
-    int triSide;
+float triangleSide() {
+    float triSide;
     
     cout << "Please enter side one of the triangle: ";
     cin >> triSide;
@@ -39,8 +40,19 @@ int triangleSide() {
     return triSide;
 }
 
-int calcArea(int s1, int s2, int s3, int s) {
-   int area;
+float triSide3() {
+    float triSide3;
+
+    cout << "Please enter the third side for the triangle (this side must be the largest of the three)" 
+    << endl;
+    cin >> triSide3;
+
+    return triSide3;
+}
+
+float calcArea(int s1, int s2, int s3) {
+   float s;
+   float area;
 
     s = (s1 + s2 + s3)/2;
 
@@ -49,31 +61,61 @@ int calcArea(int s1, int s2, int s3, int s) {
     return area;
 }
 
+float calcPerimeter(int s1, int s2, int s3) {
+    float perim;
+
+    perim = s1 + s2 + s3;
+
+    return perim;
+}
+
 int main () {
     string name;
-    int side1, side2, side3;
-    int area, perim;
-
+    float side1, side2;
+    float side3;
+    float area, perim;
+    int squared = 2;
 //Step 1:
     greetUser(name);
 
 //Step 2:    
     side1 = triangleSide();
     side2 = triangleSide();
-    side3 = triangleSide();
+    side3 = triSide3();
 
-//Step 3:
-    area = calcArea(side1, side2, side3);
+    if (pow(side1, squared) + pow(side2, squared) == pow(side3, squared)){
+        cout << "The sides you selcted create a real triangle" << endl;
+        //Step 3:
+        area = calcArea(side1, side2, side3);
+
+//Step 4:
+        perim = calcPerimeter(side1, side2, side3);
+
+//Step 5:
+        cout << "The area of the triangle with sides "
+        << side1 << ", " << side2 << ", " << side3 << " is: " << area << endl;
+
+        cout << "The perimeter is: " << perim << endl;
+
+    } else 
+        cout << "The sides you selected do not create a real triangle" << endl;
+
+// //Step 3:
+//     area = calcArea(side1, side2, side3);
+
+// //Step 4:
+//     perim = calcPerimeter(side1, side2, side3);
+
+// //Step 5:
+//     cout << "The area of the triangle with sides "
+//     << side1 << ", " << side2 << ", " << side3 << " is: " << area << endl;
+
+//     cout << "The perimeter is: " << perim << endl;
+
+    // if (pow(side1, squared) + pow(side2, squared) == pow(side3, squared)){
+    //     cout << "The sides you selcted create a real triangle" << endl;
+    // } else 
+    //     cout << "The sides you selected do not create a real triangle" << endl;
 
     return 0;
 }
-
-// int calcArea(int s1, int s2, int s3, int s) {
-//    int area;
-
-//     s = (s1 + s2 + s3)/2;
-
-//     area = sqrt (s*(s-s1)*(s-s2)*(s-s3));
-
-//     return area;
-// }

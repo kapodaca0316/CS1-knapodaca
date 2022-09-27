@@ -19,30 +19,30 @@ Date: 9/19/2022
 //     int readNumber();
 //     num1 = readNumber();
 
-//     if (num1 > 0) {
-//         cout << "You entered a postive number" << endl;
-//     } else if {
-//         if (num1 < 0) {
-//         cout << "You entered a negative number: " << endl;
-//         } else if {
-//         readNumber();
-//         cout << "You entered 0" << endl;
-//     }
+    // if (num1 > 0) {
+    //     cout << "You entered a postive number" << endl;
+    // } else if {
+    //     if (num1 < 0) {
+    //     cout << "You entered a negative number: " << endl;
+    //     } else if {
+    //     readNumber();
+    //     cout << "You entered 0" << endl;
+    // }
 
-//     // if (num1 < 0) {
-//     //     cout << "You entered a negative number: " << endl;
-//     // }
+    // if (num1 < 0) {
+    //     cout << "You entered a negative number: " << endl;
+    // }
 
-//     // if (num1 = 0) {
-//     //     cout << "You've entered 0" << endl;
-//     // }
+    // if (num1 = 0) {
+    //     cout << "You've entered 0" << endl;
+    // }
     
-//     if (num1 == num2) {
-//         cout << "The two numbers are equal" << endl;
-//             if (num1 < num2) {
-//                 cout << "num1 is less than num2" << endl;
-//             }
-//     }
+    // if (num1 == num2) {
+    //     cout << "The two numbers are equal" << endl;
+    //         if (num1 < num2) {
+    //             cout << "num1 is less than num2" << endl;
+    //         }
+    // }
 
 //     cout << "Outside of it" << endl;
 //     //cout << boolalpha << (num1 == num2) << endl;
