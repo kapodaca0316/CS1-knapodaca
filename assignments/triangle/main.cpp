@@ -18,7 +18,6 @@ Step 5: Print out results of calculations with brief description
 #include <iostream>
 #include <cmath>
 #include <string>
-#include <cassert>
 
 using namespace std;
 
