@@ -21,8 +21,6 @@ Step 5: Print out results of calculations with brief description
 
 using namespace std;
 
-//int calcArea( int s1, int s2, int s3);
-
 void greetUser (string &name){
     cout << "Please enter your first name..." << endl;
     getline(cin, name);
@@ -98,23 +96,6 @@ int main () {
 
     } else 
         cout << "The sides you selected do not create a real triangle" << endl;
-
-// //Step 3:
-//     area = calcArea(side1, side2, side3);
-
-// //Step 4:
-//     perim = calcPerimeter(side1, side2, side3);
-
-// //Step 5:
-//     cout << "The area of the triangle with sides "
-//     << side1 << ", " << side2 << ", " << side3 << " is: " << area << endl;
-
-//     cout << "The perimeter is: " << perim << endl;
-
-    // if (pow(side1, squared) + pow(side2, squared) == pow(side3, squared)){
-    //     cout << "The sides you selcted create a real triangle" << endl;
-    // } else 
-    //     cout << "The sides you selected do not create a real triangle" << endl;
 
     return 0;
 }
