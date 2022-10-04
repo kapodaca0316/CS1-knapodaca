@@ -11,40 +11,93 @@ pointers: store
 
 using namespace std;
 
-//void printName(string&);
+void printName(string*);
+void addNums(int*, int*, int*);
+int addition(int, int);
+int subtraction(int, int);
 
 int main(int argc, char *argv[]) {
-    int num1;
-    int num2, num3, num4;
-    int *something;
-    
-    num1 = 42;
-    num2 = 15;
-    num3 = 9000;
-    num4 = -5;
+   
+   int n1, n2;
 
-    cout << "&num1: " << &num1 << endl;
-    cout << "&num2: " << &num2 << endl;
-    cout << "&num3: " << &num3 << endl;
-    cout << "&num4: " << &num4 << endl;
+   n1 = 42;
+   n2 = 15;
+   
+   cout << addition(n1, n2) << endl;
 
-    something = &num1;
+   int(*add)(int, int) = addition;
+   int(*sub)(int, int) = subtraction;
+
+   cout << "function pointer: " << (*add)(n1, n2) << endl;
+
+   cout << subtraction(n1, n2) << endl;
+   cout << "function pointer: " << (*sub)(n1, n2) << endl;
     
-    cout << *something << endl;
-    something++;
-    cout << *something << endl;
-     cout << *something << endl;
-    something++;
-     cout << *something << endl;
-    something++;
-    cout << *something << endl;
-    something--;
-    cout << *something << endl;
-     cout << *something << endl;
-    something--;
-     cout << *something << endl;
-    something--;
-    cout << *something << endl;
+   
+    // int *num1 = new int;
+    // int *num2 = new int();
+    // int *total = new int(0);
+    // int **firstNum;
+
+    // firstNum = &num1;
+    
+    // cout << "Please enter 2 numbers separated by a space...";
+    // cin >> **firstNum >> *num2;
+
+    // addNums(*firstNum, num2, total);
+
+    // printf("%d + %d = %d\n", **firstNum, *num2, *total);
+
+
+    // delete num1;
+    // delete num2;
+    // delete total;
+    
+    
+    // string firstName;
+    // string *ptr;
+
+    // ptr = &firstName;
+    
+    // firstName= "Kyra";
+    
+    // //cout << &firstName << endl;
+    // printName(ptr); 
+    // cout << firstName << endl;   
+    
+    
+    
+    // int num1;
+    // int num2, num3, num4;
+    // int *something;
+    
+    // num1 = 42;
+    // num2 = 15;
+    // num3 = 9000;
+    // num4 = -5;
+
+    // cout << "&num1: " << &num1 << endl;
+    // cout << "&num2: " << &num2 << endl;
+    // cout << "&num3: " << &num3 << endl;
+    // cout << "&num4: " << &num4 << endl;
+
+    // something = &num1;
+    
+    // cout << *something << endl;
+    // something++;
+    // cout << *something << endl;
+    //  cout << *something << endl;
+    // something++;
+    //  cout << *something << endl;
+    // something++;
+    // cout << *something << endl;
+    // something--;
+    // cout << *something << endl;
+    //  cout << *something << endl;
+    // something--;
+    //  cout << *something << endl;
+    // something--;
+    // cout << *something << endl;
     // cout << &num1 << endl;
     // cout << &num2 << endl;
     // cout << &num3 << endl;
@@ -135,7 +188,20 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// void printName(string &myName){
-//     cout << &myName << endl;
-// }
+void printName(string *myName){
+    *myName = "Kyra";
+    //cout << &myName << endl;
+}
 //pointers practice 
+
+void addNums(int*n1, int*n2, int*ans){
+    *ans = *n1 + *n2;
+}
+
+int addition(int n1, int n2) {
+
+}
+
+int subtraction(int n1, int n2){
+    
+}
