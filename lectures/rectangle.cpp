@@ -10,7 +10,7 @@ void calcArea(float*, float*, float*);
 float* calcPerim(float*, float*);
 
 int main() {
-    string firstName;
+    string *firstName ;
     float side1;
     float *s1;
     float *side2 = new string();
@@ -22,6 +22,13 @@ int main() {
     promptName(firstName);
     greetUser(*firstName);
     getSides(s1, side2);
+    calcArea(s1, side2, area);
+
+    cout << "DEBUG: " << *area << endl;
+
+    delete firstName;
+    delete side2;
+    delete area;
 
     return 0;
 }
@@ -38,7 +45,7 @@ void greetUser(string* firstName) {
 
 void getSides(float *s1, float *s2){
     cout << "please enter the two sides of your rectangle separated by a space" << endl;
-
+    
 }
 
 void calcArea(float*s1, float*s2, float*area){
