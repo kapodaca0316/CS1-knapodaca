@@ -53,3 +53,13 @@
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/triangle/main.cpp |
 | **Self Grade** | 95/100 |
 | **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse and entered last into the program. There is a better way to write that, I just don't know what that would be |
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | HW - Basic Calculator using Functions and Automated Unit Testing |
+| **Description** | Homework covering basic cmath calculations using functions and running test cases |
+| **Due Date** | 10/06/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/triangle/main.cpp |
+| **Self Grade** | 95/100 |
+| **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse and entered last into the program. There is a better way to write that, I just don't know what that would be |
