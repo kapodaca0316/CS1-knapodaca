@@ -60,6 +60,6 @@
 | **Description** | Homework covering basic cmath calculations using functions and running test cases |
 | **Due Date** | 10/06/2022 |
 | **Status** | completed |
-| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/triangle/main.cpp |
-| **Self Grade** | 95/100 |
-| **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse and entered last into the program. There is a better way to write that, I just don't know what that would be |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/functions/functions.cpp |
+| **Self Grade** | 85/100 |
+| **Notes** | I'm not entirely sure that I understand how to use templates, but I think I did it right. I also am not super confident on if I wrote the test function corectly |
