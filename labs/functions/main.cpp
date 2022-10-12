@@ -1,8 +1,10 @@
 /*
 Functions Lab
-Updated By: FIXME1
+Updated By: Kyra Apodaca
+FIXME1
 CSCI 111
-Date: FIXME2
+Date: 10/03/2022
+FIXME2
 Program prompts the user to enter two points in the form (x1, y1) and (x2, y2) and finds the distance between the two points using a function.
 Algorithm steps:
    1. Define a function called findDistance(…) that takes four parameters x1, y1 and x2, y2 as two points
@@ -60,6 +62,7 @@ int main()
         printf("(x1, y1) = (%d, %d)\n", x1, y1);
 
         cout << "Enter a second point in the form (x, y): ";
+        cin >> ch >> x2 >> ch >> y2 >> ch;
         //FIXME3 - Read/parse the second point and store data into variables x2 and y2
         //FIXME4 - Call test function
 
