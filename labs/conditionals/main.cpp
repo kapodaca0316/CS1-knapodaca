@@ -123,9 +123,6 @@ double findProduct(const double &n1, const double &n2) {
 }
 
 void findAverage(const double &n1, const double &n2, double &avg) {
-    double avg;
-    double n1, n2;
-
     avg = findSum(n1, n2)/2;
     //FIXME5 - find the average of n1 and n2 and update avg
     //FIXME6 - Must call findSum function to find the sum of n1 and n2
@@ -141,7 +138,7 @@ double findLarger(const double &n1, const double &n2) {
 }
 
 double findSmaller(const double &n1, const double &n2) {
-  double smaller = (n1 >= n2) ? n1 : n2;
+  double smaller = (n2 >= n1) ? n1 : n2;
     //FIXME7 - find the smaller of n1 and n2 and return it
     //#fixed#
     return smaller;
@@ -171,8 +168,11 @@ void test() {
     assert(findSmaller(4, 18) == 4);
     assert(findQuotient(4, 2) ==2);
     assert(findQuotient(54, 9) == 6);
-    // assert(findAverage(6, 2) == 4);
-    // assert(findAverage(8, 2) == 5);
+    double avg;
+    findAverage(6, 2, avg);
+    assert(avg == 8);
+    findAverage(8, 2, avg);
+    assert(avg == 10);
 
     // FIXME9 – Using assert function write at least 2 test cases for each of the following functions
     // findDifference(), findProduct(), findLarger(),
@@ -221,14 +221,14 @@ bool program() {
             double difference = findDifference(num1, num2);
             //FIXME11: call findDifference function and print the result
             //#fixed#
-            printf("%.2f + %.2f = %.2f\n", num1, num2, difference);
+            printf("%.2f - %.2f = %.2f\n", num1, num2, difference);
             break;
         }
         case 3:
         {
             getTwoNumbers(num1, num2);
             double product = findProduct(num1, num2);
-            printf("%.2f + %.2f = %.2f\n", num1, num2, product);
+            printf("%.2f * %.2f = %.2f\n", num1, num2, product);
             //FIXME12: get two numbers and find their product using functions
             //#fixed#
             break;
@@ -237,7 +237,7 @@ bool program() {
         {
             getTwoNumbers(num1, num2);
             double quotient = findQuotient(num1, num2);
-            printf("%.2f + %.2f = %.2f\n", num1, num2, quotient);
+            printf("%.2f / %.2f = %.2f\n", num1, num2, quotient);
             break;
         }
     // FIXME13: complete the rest of the cases 4, 6, and 7

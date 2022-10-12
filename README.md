@@ -21,6 +21,8 @@
 | **Self Grade** | 90/100 |
 | **Notes** | typed the given code stub; fixed all the fixmes |
 
+### Lab #2
+
 | **Name** | Kyra Apodaca|
 |:---|:---|
 | **Name** | Circle- Maths and Std IO Lab |
@@ -31,6 +33,17 @@
 | **Self Grade** | 95/100 |
 | **Notes** | typed the given code stub; fixed all the fixmes |
 
+### Lab #4
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | Conditional Statements and More User Defined Functions Lab |
+| **Description** | Learning how to use conditional statements and practicing using and calling different types of functions |
+| **Due Date** | 10/12/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/conditionals/main.cpp |
+| **Self Grade** | 90/100 |
+| **Notes** | I'm not positive I wrote the test function correctly |
 
 ### Assignment #1
 
@@ -44,6 +57,8 @@
 | **Self Grade** | 95/100 |
 | **Notes** | wrote and tested the input/output multiple times |
 
+### Assignment #2
+
 | **Name** | Kyra Apodaca|
 |:---|:---|
 | **Name** | HW - Triangle Maths |
@@ -53,6 +68,8 @@
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/triangle/main.cpp |
 | **Self Grade** | 95/100 |
 | **Notes** | I tested it a bunch, the way I wrote it makes it so that the way to tell if the triangle is real or not the third side must be the hypotenuse and entered last into the program. There is a better way to write that, I just don't know what that would be |
+
+### Assignment #3
 
 | **Name** | Kyra Apodaca|
 |:---|:---|
