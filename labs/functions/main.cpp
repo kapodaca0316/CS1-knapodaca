@@ -63,11 +63,19 @@ int main()
 
         cout << "Enter a second point in the form (x, y): ";
         cin >> ch >> x2 >> ch >> y2 >> ch;
+        printf("(x2, y2) = (%d, %d)\n", x2, y2);
         //FIXME3 - Read/parse the second point and store data into variables x2 and y2
+        //#fixed#
+        //test();
         //FIXME4 - Call test function
+        //#fixed#
 
+        findDistance(x1, y1, x2, y2);
         //FIXME5 - call findDistance function passing proper arguments
+        //#fixed#
+        printf("distance between the two points = (%d)\n", findDistance(x1, y1, x2, y2));
         //FIXME6 – Using printf function display the returned distance with proper description
+        //#fixed#
     }
 
     cin.ignore(1000, '\n');
@@ -79,10 +87,14 @@ int main()
 
 double findDistance(int x1, int y1, int x2, int y2)
 {
+    double inside, dist;
+    inside = ((x2-x1)^2 + (y2-y1)^2);
+    dist = sqrt(inside);
     // FIXME7 - Find the distance between (x1, y1) and (x2, y2)
+    //#fixed#
     // following the algorithm in step 1
     // return the calculated distance
-    return 0.000000;
+    return dist;
 }
 
 // test function that test findDistance function with 3 test cases
