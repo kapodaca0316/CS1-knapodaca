@@ -37,13 +37,13 @@
 
 | **Name** | Kyra Apodaca|
 |:---|:---|
-| **Name** | Circle- Maths and Std IO Lab |
-| **Description** | Lab covering standard input and output and cmath calculations |
-| **Due Date** | 09/20/2022 |
+| **Name** | Lab - Built-in and User Defined Functions & Automated Testing Lab |
+| **Description** | Write a C++ program that prompts the user to enter two points on a 2D geometry and finds the distance between the two points |
+| **Due Date** | 10/06/2022 |
 | **Status** | completed |
-| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/ascii/ASCIIArt.cpp |
-| **Self Grade** | 95/100 |
-| **Notes** | typed the given code stub; fixed all the fixmes |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/functions/main.cpp |
+| **Self Grade** | 65/100 |
+| **Notes** | This is late and I don't think it's calculating the distance properly. I should have used pow I think. |
 
 ### Lab #4
 
