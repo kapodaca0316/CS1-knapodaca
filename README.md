@@ -80,3 +80,15 @@
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/functions/functions.cpp |
 | **Self Grade** | 85/100 |
 | **Notes** | I'm not entirely sure that I understand how to use templates, but I think I did it right. I also am not super confident on if I wrote the test function corectly |
+
+### Assignment #4
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | HW - CLI Menu, Conditionals, Functions and Testing |
+| **Description** | Write a CLI based menu-driven C++ program that computes sum, product, max, min, average, oddity of any 5 given numbers along with the following requirements. |
+| **Due Date** | 10/06/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/functions/functions.cpp |
+| **Self Grade** | 85/100 |
+| **Notes** | I'm not entirely sure that I understand how to use templates, but I think I did it right. I also am not super confident on if I wrote the test function corectly |
