@@ -48,7 +48,7 @@ void clearScreen() {
 
 int main()
 {
-    int x1, y1, x2, y2; // variables to store two points (x1, y1) and (x2, y2)
+    int x1, y1, x2, y2, dist; // variables to store two points (x1, y1) and (x2, y2)
     char ch;
 
     //FIXME-bonus - 10 bonus points - add loop until user wants to quit
@@ -70,10 +70,10 @@ int main()
         //FIXME4 - Call test function
         //#fixed#
 
-        findDistance(x1, y1, x2, y2);
+        dist = findDistance(x1, y1, x2, y2);
         //FIXME5 - call findDistance function passing proper arguments
         //#fixed#
-        printf("distance between the two points = (%d)\n", findDistance(x1, y1, x2, y2));
+        printf("distance between the two points = (%d)\n", dist);
         //FIXME6 – Using printf function display the returned distance with proper description
         //#fixed#
     }
@@ -88,7 +88,7 @@ int main()
 double findDistance(int x1, int y1, int x2, int y2)
 {
     double inside, dist;
-    inside = ((x2-x1)^2 + (y2-y1)^2);
+    inside = (((x2-x1)^2) + ((y2-y1)^2));
     dist = sqrt(inside);
     // FIXME7 - Find the distance between (x1, y1) and (x2, y2)
     //#fixed#

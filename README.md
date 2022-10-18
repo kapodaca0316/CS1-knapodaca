@@ -89,7 +89,7 @@
 | **Description** | Write a C++ program that prompts the user to enter two points on a 2D geometry and finds the distance between the two points |
 | **Due Date** | 10/06/2022 |
 | **Status** | completed |
-| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/functions/functions.cpp |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/functions/main.cpp |
 | **Self Grade** | 65/100 |
 | **Notes** | This is late and I don't think it's calculating the distance properly. I should have used pow I think. |
 
