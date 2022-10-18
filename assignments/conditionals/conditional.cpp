@@ -81,7 +81,7 @@ void printMenu() {
     cout << "(3) Find Average\n";
     cout << "(4) Find Largest\n";
     cout << "(5) Find Smallest\n";
-    cout << "(6) Fnd even, odd, or zero" << endl;
+    cout << "(6) Oddity" << endl;
 }
 
 void greetUser() {
@@ -144,6 +144,12 @@ double findSmallest(const double &n1, const double &n2, const double &n3, const 
         cout << "The numbers are all the same" << endl;
     }
 }
+
+// double findFloor(const double &, const double &, const double &, const double &, const double &) {
+//     double sum;
+//     sum = findSum();
+//     floor(sum);
+// }
 
 
 void test() {
