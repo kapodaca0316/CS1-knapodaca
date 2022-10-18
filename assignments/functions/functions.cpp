@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
 
     cout << "Hello! Welcome to my homework 3!" << endl;
 
-    cout << "Please enter a number numbers: " << endl;
+    cout << "Please enter a number: " << endl;
     cin >> num1;
     
     cout << "Please enter another number: " << endl;

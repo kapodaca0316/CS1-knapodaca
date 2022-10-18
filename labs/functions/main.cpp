@@ -102,7 +102,10 @@ void test()
 {
     float result =  findDistance(4, 3, 5, 1);
     float expected = 2.236067f;
-    assert( fabs(result - expected) <= epsilon); //accept the result if it's less than the error of margin
+    assert( fabs(result - expected) <= epsilon);
+    assert(findDistance(2, 0, 3, 0) == 1);
+    assert(findDistance(0, 0, 6, 0) == 6);
+    //accept the result if it's less than the error of margin
     // FIXME8 - add at least two more test cases
     cerr << "all tests passed..." << endl;
 }
