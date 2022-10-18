@@ -33,6 +33,18 @@
 | **Self Grade** | 95/100 |
 | **Notes** | typed the given code stub; fixed all the fixmes |
 
+### Lab #3
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | Circle- Maths and Std IO Lab |
+| **Description** | Lab covering standard input and output and cmath calculations |
+| **Due Date** | 09/20/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/ascii/ASCIIArt.cpp |
+| **Self Grade** | 95/100 |
+| **Notes** | typed the given code stub; fixed all the fixmes |
+
 ### Lab #4
 
 | **Name** | Kyra Apodaca|
@@ -73,13 +85,13 @@
 
 | **Name** | Kyra Apodaca|
 |:---|:---|
-| **Name** | HW - Basic Calculator using Functions and Automated Unit Testing |
-| **Description** | Homework covering basic cmath calculations using functions and running test cases |
+| **Name** | Lab - Built-in and User Defined Functions & Automated Testing Lab |
+| **Description** | Write a C++ program that prompts the user to enter two points on a 2D geometry and finds the distance between the two points |
 | **Due Date** | 10/06/2022 |
 | **Status** | completed |
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/functions/functions.cpp |
-| **Self Grade** | 85/100 |
-| **Notes** | I'm not entirely sure that I understand how to use templates, but I think I did it right. I also am not super confident on if I wrote the test function corectly |
+| **Self Grade** | 65/100 |
+| **Notes** | This is late and I don't think it's calculating the distance properly. I should have used pow I think. |
 
 ### Assignment #4
 
@@ -87,7 +99,7 @@
 |:---|:---|
 | **Name** | HW - CLI Menu, Conditionals, Functions and Testing |
 | **Description** | Write a CLI based menu-driven C++ program that computes sum, product, max, min, average, oddity of any 5 given numbers along with the following requirements. |
-| **Due Date** | 10/06/2022 |
+| **Due Date** | 10/17/2022 |
 | **Status** | completed |
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/conditionals/conditional.cpp |
 | **Self Grade** | 90/100 |
