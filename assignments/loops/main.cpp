@@ -31,7 +31,6 @@ Steps:
 #include <string>
 #include <stdlib.h>
 #include <cassert>
-#include <cmath>
 
 using namespace std;
 
@@ -39,11 +38,13 @@ int randomNumber();
 int readNumber();
 int checkGuess(int, int);
 int game(int);
+bool playAgain();
+int percentages(int, int);
 
 int main(int argc, char *argv[]) {
     // Ask the player's name and greet the player
     string name;
-    int secretNumber, guess, gameCount = 1, successCount = 0, gameResult, percent;
+    int secretNumber, guess, gameCount = 1, successCount = 0, gameResult, percent, won, lost;
     bool cont;
 
     cout << "Hello friend! What's your name?" << endl;
@@ -54,27 +55,32 @@ int main(int argc, char *argv[]) {
 
     
     while (true) {
-    cout << "The computer has generated a random number between 1 and 20...\n";
-    cout << "You have six tries to guess the correct number. Good Luck!" << endl;
+        cout << "The computer has generated a random number between 1 and 20...\n";
+        cout << "You have six tries to guess the correct number. Good Luck!" << endl;
 
-    secretNumber = randomNumber();
+        secretNumber = randomNumber();
 
-    gameResult = game(secretNumber);
+        gameResult = game(secretNumber);
 
-    successCount = successCount + gameResult;
+        successCount = successCount + gameResult;
+        cont = playAgain();
 
-    cont = playAgain();
+        if (!cont) {
+            break;
+        } 
 
-    if (!cont) {
-        break;
-    } 
-
-    gameCount ++;
+        gameCount++;
     }
 
-    cout << "You played " << gameCount << "games\n";
-    cout << "You won " << percentages(successCount, gameCount) << "% of the games you played\n";
-    cout << "You lost " << percentages((gameCount-successCount), gameCount) << "% of the games you played";
+    // cout << gameCount << endl;
+    // cout << successCount << endl;
+    // cout << gameCount-successCount << endl;
+
+    cout << "You played " << gameCount << " games\n";
+    won = percentages(successCount, gameCount);
+    cout << "You won " << won << "% of the games you played\n";
+    lost = percentages((gameCount-successCount), gameCount);
+    cout << "You lost " << lost << "% of the games you played";
     
 
     return 0;
@@ -102,8 +108,7 @@ int readNumber() {
     // You must validate the guessed number to be between 1 and 20
 
     if (guess <= 20) {
-
-        cout << "Your number: " << guess << endl;
+        cout << "Your guess is: " << guess << endl;
     } else {
 
         cout << "Error: please ensure you enter a number between 1 and 20" << endl;
@@ -163,7 +168,7 @@ int game(int secretIn) {
 
     while (true) {
         guess = readNumber();
-        cout << "Your guess is: " << guess << endl;
+        // cout << "Your guess is: " << guess << endl;
 
         result = checkGuess(guess, secretIn); 
 
@@ -199,10 +204,16 @@ bool playAgain() {
 
 }
 
-float percentages(int numerator, int denomenator) {
-    float percent;
+int percentages(int numerator, int denomenator) {
+    int percent;
 
-    percent = (numerator/denomenator) * 100;
+    cout << numerator << endl;
+    cout << denomenator << endl;
+
+    percent = (numerator/denomenator) *100;
+  
+
+    // cout << percent << endl;
 
     return percent;
 }

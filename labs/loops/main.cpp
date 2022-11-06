@@ -43,13 +43,7 @@ void printFlippedTriangle(int height) {
     
     */
     // FIXME3 ...
-    int row = 1;
-    while (row <= height) {
-        for(int col = 1; col<=row; col++)
-            cout << "* ";
-        row += 1;
-        cout << endl;
-    }
+    
 }
 
 
