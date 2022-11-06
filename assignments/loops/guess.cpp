@@ -58,13 +58,13 @@ Steps:
 
 using namespace std;
 
-int randomNumber(int);
+int randomNumber();
 
-int readNumber(int);
+int readNumber();
 
 int checkGuess(int, int);
 
-int game(int, int);
+int game(int);
 
 int main(int argc, char *argv[])
 {
@@ -85,16 +85,16 @@ int main(int argc, char *argv[])
 
     cout << "You have six tries to guess the correct number. Good Luck!" << endl;
 
-    randomNumber(secretNumber);
+    secretNumber = randomNumber();
 
-    game(guess, secretNumber);
+    game(secretNumber);
 
     return 0;
 }
 
 // Define a function called randomNumber that generates and returns a random number between 1 and 20
 
-int randomNumber(int n2)
+int randomNumber()
 {
 
     srand(time(0));
@@ -142,25 +142,27 @@ int readNumber()
 int checkGuess(int g1, int s1)
 {
 
-    int guess, secretNumber;
 
     cout << "g: " << g1 << endl;
 
     cout << "sn: " << s1 << endl;
 
-    if (guess == secretNumber)
+    if (g1 == s1)
     {
 
         cout << "Way to go! You won!" << endl;
 
-        cout << "The secret number is: " << secretNumber << endl;
+        cout << "The secret number is: " << s1 << endl;
+
+        return 1;
     }
-    else if (guess < secretNumber)
+    else if (g1 < s1)
     {
 
         cout << "Your number is too low..." << endl;
+
     }
-    else if (guess > secretNumber)
+    else if (g1 > s1)
     {
 
         cout << "Your number is too high..." << endl;
@@ -188,11 +190,9 @@ void test()
 
 // Define a function called game that implements the logic of the guess the number game
 
-int game(int n1, int n2)
+int game(int secretIn)
 {
-
-    int guess, secretNumber;
-
+    int guess, result;
     int attemptsRemaining = 6;
 
     while (true)
@@ -201,14 +201,18 @@ int game(int n1, int n2)
         guess = readNumber();
         cout << "Your guess is: " << guess << endl;
 
-        checkGuess(guess, secretNumber);
+        result = checkGuess(guess, secretIn); 
+
+        if (result == 1) {
+            break;
+        }
 
         attemptsRemaining--;
 
         if (attemptsRemaining == 0)
         {
 
-            cout << "You ran out of tries! Thats too bad.. the secret number is: " << secretNumber << endl;
+            cout << "You ran out of tries! Thats too bad.. the secret number is: " << secretIn << endl;
 
             break;
         }

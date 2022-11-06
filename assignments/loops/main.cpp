@@ -5,6 +5,7 @@ Date: 10/23/2022
 Guess the number game
 
 Steps:
+
 1- Ask the player's name and greet the player
 2- Define a function called randomNumber that generates and returns a random number between 1 and 20
 3- Define a function called readNumber that prompts the user to take a guess and return the guessed number
@@ -30,102 +31,178 @@ Steps:
 #include <string>
 #include <stdlib.h>
 #include <cassert>
+#include <cmath>
 
 using namespace std;
 
-int randomNumber(int);
-int readNumber(int);
+int randomNumber();
+int readNumber();
 int checkGuess(int, int);
-int game(int, int);
+int game(int);
 
 int main(int argc, char *argv[]) {
-    //Ask the player's name and greet the player
+    // Ask the player's name and greet the player
     string name;
-    int secretNumber, guess;
+    int secretNumber, guess, gameCount = 1, successCount = 0, gameResult, percent;
+    bool cont;
+
     cout << "Hello friend! What's your name?" << endl;
+
     getline(cin, name);
+
     cout << "Great to meet you " << name << "! Welcome to my number guessing game!" << endl;
 
+    
+    while (true) {
     cout << "The computer has generated a random number between 1 and 20...\n";
     cout << "You have six tries to guess the correct number. Good Luck!" << endl;
 
-    randomNumber(secretNumber);
-    game(guess, secretNumber);
+    secretNumber = randomNumber();
 
+    gameResult = game(secretNumber);
+
+    successCount = successCount + gameResult;
+
+    cont = playAgain();
+
+    if (!cont) {
+        break;
+    } 
+
+    gameCount ++;
+    }
+
+    cout << "You played " << gameCount << "games\n";
+    cout << "You won " << percentages(successCount, gameCount) << "% of the games you played\n";
+    cout << "You lost " << percentages((gameCount-successCount), gameCount) << "% of the games you played";
+    
 
     return 0;
 }
 
-//Define a function called randomNumber that generates and returns a random number between 1 and 20
-int randomNumber(int n2) {
+// Define a function called randomNumber that generates and returns a random number between 1 and 20
+
+int randomNumber() {
     srand(time(0));
-        int secretNumber = 1 + (rand() % 20);
+
+    int secretNumber = 1 + (rand() % 20);
 
     return secretNumber;
 }
 
-//Define a function called readNumber that prompts the user to take a guess and return the guessed number
+// Define a function called readNumber that prompts the user to take a guess and return the guessed number
+
 int readNumber() {
     int guess;
 
     cout << "Guess the number!" << endl;
+
     cin >> guess;
 
-//You must validate the guessed number to be between 1 and 20
+    // You must validate the guessed number to be between 1 and 20
+
     if (guess <= 20) {
+
         cout << "Your number: " << guess << endl;
     } else {
+
         cout << "Error: please ensure you enter a number between 1 and 20" << endl;
     }
 
     return guess;
 }
 
-//Define a function called checkGuess that takes two integers compares the two numbers
-    // returns 0 if the numbers are equal
-    // returns -1 if the first number is less than second
-    // returns 2 otherwise
-int checkGuess(int g1, int s1) {
-    int guess, secretNumber;
-    
-    // cout << "g: " << guess << endl;
-    // cout << "sn: " << secretNumber << endl;
+// Define a function called checkGuess that takes two integers compares the two numbers
 
-    if (guess == secretNumber) {
+int checkGuess(int g1, int s1) {
+    // cout << "g: " << g1 << endl;
+    // cout << "sn: " << s1 << endl;
+
+    if (g1 == s1)
+    {
+
         cout << "Way to go! You won!" << endl;
-        cout << "The secret number is: " << secretNumber << endl;
-    } else if (guess < secretNumber) {
+
+        cout << "The secret number is: " << s1 << endl;
+
+        return 1;
+    }
+    else if (g1 < s1)
+    {
+
         cout << "Your number is too low..." << endl;
-    } else if (guess > secretNumber) {
+
+    }
+    else if (g1 > s1)
+    {
+
         cout << "Your number is too high..." << endl;
-    } else {
+    }
+    else
+    {
+
         cout << "Make sure your number is in the corret range" << endl;
     }
+
     return 0;
 }
 
-//Write 3 test cases for checkGuess function using assert statement
+// Write 3 test cases for checkGuess function using assert statement
+
 void test() {
-assert(checkGuess(3, 2));
-assert(checkGuess(14, 9));
-assert(checkGuess(19, 6));
+    assert(checkGuess(3, 2));
+    assert(checkGuess(14, 9));
+    assert(checkGuess(19, 6));
 }
 
-//Define a function called game that implements the logic of the guess the number game
-int game(int n1, int n2) {
-    int guess, secretNumber;
+// Define a function called game that implements the logic of the guess the number game
+
+int game(int secretIn) {
+    int guess, result;
     int attemptsRemaining = 6;
-    while (true){
-        readNumber();
-        checkGuess(guess, secretNumber);
+
+    while (true) {
+        guess = readNumber();
+        cout << "Your guess is: " << guess << endl;
+
+        result = checkGuess(guess, secretIn); 
+
+        if (result == 1) {
+            return 1;
+        }
+
         attemptsRemaining--;
 
         if (attemptsRemaining == 0) {
-            cout << "You ran out of tries! Thats too bad.. the secret number is: " << secretNumber << endl;
+            cout << "You ran out of tries! Thats too bad.. the secret number is: " << secretIn << endl;
+
             break;
         }
     }
 
     return 0;
-    
+}
+
+bool playAgain() {
+    string answer;
+
+    while (true) {
+    cout << "Would you like to play again? (yes/no)" << endl;
+    cin >> answer;
+
+    if (answer == "yes") {
+        return true;
+    } else if (answer == "no") {
+        return false;
+    }
+    }
+
+}
+
+float percentages(int numerator, int denomenator) {
+    float percent;
+
+    percent = (numerator/denomenator) * 100;
+
+    return percent;
 }
