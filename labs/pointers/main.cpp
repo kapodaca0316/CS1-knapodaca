@@ -44,20 +44,24 @@ OPERATION getOperation(char);
 
 int main(int argc, char* argv[]) {
     char input;
+    bool keeprunning = true;
+    
+    while (keeprunning) {
     big_int *num1; // a pointer to point that points to unsigned int aka big_int data type
     num1 = new big_int; //allocate memory in heap and store the address in num1
     big_int *num2 = new big_int; //declare num2 as a dynamic variable
     large_int *sum = new large_int; //declare sum as a dynamic variable
     large_int *prod = new large_int;
     large_int *diff = new large_int;
-    // FIXME3 - declare dynamic variables to store difference and larger values
+    large_int *bigger = new large_int;
+    // FIXME3 - declare dynamic variables to store difference and larger values #FIXED#
     // Must use these variables to store the returned values from functions
 
     OPERATION oper;
     
-    //FIXME4: Add do... while loop to continue the program until the user wants to quit
-    //FIXME5: call clear function defined above to clear the screen
-
+    //FIXME4: Add do... while loop to continue the program until the user wants to quit #FIXED#
+    //FIXME5: call clear function defined above to clear the screen #FIXED#
+    clear();
     showMenu();
     cin >> input;
     oper = getOperation(input);
@@ -79,17 +83,43 @@ int main(int argc, char* argv[]) {
             *prod = MyFunctions::findProduct(*num1, *num2);
             printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
             break; 
-            default:
+        case SUBTRACT:
+            cout << "Enter two whole numbers separated by space: ";
+            cin >> *num1 >> *num2;
+            *diff = MyFunctions::findDifference(*num1, *num2);
+            printf("%d - %d = %d\n", *num1, *num2, *diff);
             break;
+        case LARGER:
+            cout << "Enter two whole numbers separated by space: ";
+            cin >> *num1 >> *num2;
+            *bigger = MyFunctions::findLarger(num1, num2);
+            printf("%d is the larger number\n", *bigger);
+            break;
+        case QUIT:
+            keeprunning = false;
+            break;
+        default:
+        break;
+
     } 
 
     delete num1;
     delete num2;
     delete sum;
     delete prod; 
+    delete diff;
+    delete bigger;
     cin.ignore(1000, '\n');
+    if (!keeprunning) {
     cout << "Good bye! Enter to exit the program...";
     cin.get(); 
+    } else {
+        cout << "Press any key to continue...";
+        cin.get();
+    }
+
+    }
+    
     return 0; 
 }
 
@@ -98,7 +128,8 @@ void showMenu(void) {
     cout << "[1] Add two integers\n";
     cout << "[2] Multiply two integers\n";
     cout << "[3] Subtract one integer from another\n";
-    cout << "[4] Quit the program\n";
+    cout << "[4] Find the larger of the two\n";
+    cout << "[5] Quit the program\n";
     cout << "Enter your choice [1-4]: ";
 }
 
@@ -116,7 +147,10 @@ OPERATION getOperation(char choice) {
         case '3':
             op = SUBTRACT;
             break;
-        // FIXME7 - add case for LARGER
+        // FIXME7 - add case for LARGER #FIXED#
+        case '4':
+            op = LARGER;
+            break;
         default:
             op = QUIT;
     }
@@ -129,12 +163,23 @@ big_int MyFunctions::findSum(const big_int *n1, const big_int *n2) {
     return (*n1) + (*n2);
 }
 
-// FIXME8: define findLarger function declared inside MyFunctions namespace
+// FIXME8: define findLarger function declared inside MyFunctions namespace #FIXED#
 // function returns the larger of the two given values
+big_int MyFunctions::findLarger(const big_int *n1, const big_int *n2) {
+    if (n1 > n2) {
+        return *n1;
+    } else {
+        return *n2;
+    }
+    return 0;
+}
 
 large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2) {
     return n1 * n2;
 }
 
-// FIXME9: define findDifference function declared inside MyFunctions namespace
+// FIXME9: define findDifference function declared inside MyFunctions namespace #FIXED#
 // return the value of second big_int subtracted from the first
+large_int MyFunctions::findDifference(const large_int &n1, const large_int &n2) {
+    return n1 - n2;
+}

@@ -69,6 +69,18 @@
 | **Self Grade** | 100/100 |
 | **Notes** | It took me a while to think it through because I was over complicating it in my head |
 
+### Lab #6
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1 - Loops Lab |
+| **Description** | The following lab demonstrates the usage of pointers, enum type and use-defi |
+| **Due Date** | 10/28/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/pointers/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | This one was fairly simple, I had a few minor bugs caused by not starting my while loop in the right spot, but that was easy to fix |
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
