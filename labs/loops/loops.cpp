@@ -75,6 +75,7 @@ void printSquare(int height) {
         row += 1;
         cout << endl;
     }
+    cout << "finished square" << endl;
 }
 
 // function clears the screen system call
@@ -120,6 +121,12 @@ int main(int argc, char* argv[]) {
 
     // FIXME10
     // Use conditional statements to break the loop or continue the loop
+    
+    cout << "Would you like to try again? (y/Y to run again)" << endl;
+    cin >> play;
+
+    clearScreen();
+    
     if (play != "Y"||"y") {
         break;
     }
