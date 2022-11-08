@@ -44,12 +44,15 @@ void printFlippedTriangle(int height) {
     */
     // FIXME3 ...
     int row = 1;
-    while (row >= height) {
-        for(int col = 1; row>=col; col++)
+    // row
+    while (row <= height) {
+        // column
+        for(int col = 1; col<=height-row+1; col++)
             cout << "* ";
         row += 1;
         cout << endl;
     }
+    
 }
 
 
@@ -67,7 +70,7 @@ Square of height 5, e.g., would look like the following.
 void printSquare(int height) {
     int row = 1;
     while (row <= height) {
-        for(int col = 1; col<=row; col++)
+        for(int col = 1; col<=height; col++)
             cout << "* ";
         row += 1;
         cout << endl;
@@ -89,7 +92,11 @@ int main(int argc, char* argv[]) {
     // FIXME5 add a loop to make the program to continue to run until the user wants to quit
     // FIXME6 call clearScreen function to clear the screen for each round of the loop
     int height;
+    string play;
+    
     cout << "Program prints geometric shapes of given height with *\n";
+    
+    while (true) {
     cout << "Please enter the height of the shape: ";
     cin >> height;
     // call printTriangle function passing user entered height
@@ -113,6 +120,10 @@ int main(int argc, char* argv[]) {
 
     // FIXME10
     // Use conditional statements to break the loop or continue the loop
+    if (play != "Y"||"y") {
+        break;
+    }
+    }
 
     return 0;
 }

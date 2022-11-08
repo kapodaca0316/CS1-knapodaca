@@ -57,6 +57,18 @@
 | **Self Grade** | 90/100 |
 | **Notes** | I'm not positive I wrote the test function correctly |
 
+### Lab #4
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1 - Loops Lab |
+| **Description** | The following lab demonstrates the use of loop structures in C++ by drawing various geometric shapes with ASCII characters |
+| **Due Date** | 10/26/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/loops/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | It took me a while to think it through because I was over complicating it in my head |
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
