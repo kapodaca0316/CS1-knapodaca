@@ -81,6 +81,23 @@
 | **Self Grade** | 100/100 |
 | **Notes** | This one was fairly simple, I had a few minor bugs caused by not starting my while loop in the right spot, but that was easy to fix |
 
+### Lab #7
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | Hissing Microphone |
+| **Description** | ### Lab #6
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1 - Loops Lab |
+| **Description** | Read and solve the Kattis problem Hissing Microphone |
+| **Due Date** | 11/03/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/pointers/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | I like doing Kattis problems a lot :) |
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
