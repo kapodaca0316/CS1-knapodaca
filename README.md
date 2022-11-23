@@ -161,6 +161,6 @@
 | **Description** | Write program that will take in a string and replace any consecutively repeating letters with one instance of that letter |
 | **Due Date** | 10/25/2022 |
 | **Status** | completed |
-| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/loops/main.cpp |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/apaxiaaaaans/main.cpp |
 | **Self Grade** | 100/100 |
 | **Notes** | I took a lot of time to think through how to write the test functions, I think I did it right |
