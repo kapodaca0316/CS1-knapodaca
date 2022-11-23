@@ -146,9 +146,21 @@
 | **Name** | Kyra Apodaca|
 |:---|:---|
 | **Name** | CS1-HW-Loop-GuessTheNumber |
-| **Description** |Write a program that generates a random number and takes in user input to decide if the number is equal, higher, or lower |
+| **Description** | Write a program that generates a random number and takes in user input to decide if the number is equal, higher, or lower |
 | **Due Date** | 10/25/2022 |
 | **Status** | completed |
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/loops/main.cpp |
 | **Self Grade** | 100/100 |
 | **Notes** | The biggest issue I had was with the bonus. My program calculates the correct number of games played, won, and lost, but everytime I tried to calculate the percentage for it, I was getting 0 |
+
+### Assignment #6
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1-HW-String-Apaxiaans |
+| **Description** | Write program that will take in a string and replace any consecutively repeating letters with one instance of that letter |
+| **Due Date** | 10/25/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/loops/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | I took a lot of time to think through how to write the test functions, I think I did it right |
