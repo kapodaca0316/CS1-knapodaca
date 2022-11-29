@@ -93,6 +93,18 @@
 | **Self Grade** | 100/100 |
 | **Notes** | I like doing Kattis problems a lot :) |
 
+### Lab #8
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1 - Array Lab |
+| **Description** | The following lab demonstrates the usage of an array data structure and some operations on arrays |
+| **Due Date** | 11/11/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/array/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | I found this one fairly simple and it seemed to run without issues after multiple tests on the first try |
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
