@@ -122,7 +122,7 @@ void bubbleSort(int nums[], int len) {
 
 big_int findSum(int nums[], int len) {
 	big_int sum = 0;
-	// FIXME6: iterate through nums array and add each element to sum
+	// FIXME6: iterate through nums array and add each element to sum #FIXED#
 	for (int i = 0; i < len; i++) {
 		sum = sum + nums[i];
 	} 
