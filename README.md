@@ -176,3 +176,15 @@
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/apaxiaaaaans/main.cpp |
 | **Self Grade** | 100/100 |
 | **Notes** | I took a lot of time to think through how to write the test functions, I think I did it right |
+
+### Assignment #7
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | HW - Array - Falling Apart	 |
+| **Description** | Solve Kattis Problem - Falling Apart |
+| **Due Date** | 11/14/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/array/main.cpp |
+| **Self Grade** | 100/100 |
+| **Notes** | I wasn't sure which part you wanted me to test so I tested my findSum function three times and my whosWho function once |
