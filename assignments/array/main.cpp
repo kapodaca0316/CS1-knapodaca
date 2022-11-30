@@ -110,8 +110,8 @@ void tests() {
     int test[5] = {9,7,8,10,13};
     int test2[3] = {9,11,5};
     int test3[7] = {11,7,12,19,2,6,7};
-    int resultA[3] = {5,3,1};
-    int resultB[2] = {4,2};
+    int resultA[3] = {13,9,7};
+    int resultB[2] = {10,8};
     
     int *numsA = new int [3];
     int *numsB = new int [2];
@@ -121,6 +121,6 @@ void tests() {
     assert(findSum(test3, 7) == 64);
     
     whosWho(test, numsA, numsB, 5);
-    assert(numsA == resultA);
-    assert(numsB == resultB);
+    assert(numsA[0] == resultA[0]);
+    assert(numsB[0] == resultB[0]);
 }
