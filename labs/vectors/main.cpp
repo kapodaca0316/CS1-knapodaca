@@ -1,7 +1,9 @@
 /*
     CS1 - Vector Lab
-    Updated by: FIXME1
-    Date: FIXME2
+    Updated by: Kyra Apodaca
+    FIXME1 #FIXED#
+    Date: 11/23/2022
+    FIXME2 #FIXED#
     Program: Number system converter  
     The program converts decimal to binary and binary to decimal number system.
     Lab demonstrates the vector application. 
@@ -53,8 +55,12 @@ int main()
         choice = menuOption();
         switch(choice) {
             case 1:
-                // FIXME3
-                cout << "FIXME\n";
+                // FIXME3 
+                //#FIXED#
+                cout << "Enter a positive decimal number: \n";
+                cin >> decimalNum;
+                binary = decToBin(decimalNum);
+                printf("(11%u) base 10 = (%s) base 2\n", decimalNum, binary.c_str());
                 break;
             case 2:
                 // FIXME4
@@ -90,7 +96,23 @@ int main()
 string decToBin(llu num) {
     // FIXME5 - use algorithm step in Ch03-StdInputOutput chapter
     // or use hint from decToOct function
+    //#FIXED#
+    int divisor = 2;
+    llu decimal = num;
+    num = 0;
+    int remainder, product = 1;
+    int i = 0;
+    i++;
+
+    cout << "quotient = " << decimal << endl;
     
+    while (decimal != 0) {
+        remainder = decimal%divisor;
+        num = num + (remainder * product);
+        decimal = decimal/divisor;
+        product *= 10;
+    }
+
     return to_string(num);
 }
 
@@ -98,6 +120,16 @@ llu binToDec(string binaryNumber)
 {
     // FIXME6 - use algorithm described in Ch03-StdInputOutput chapter
     // or use hints from binToOct function
+    //#FIXED#
+    llu ans = 0;
+    int exp;
+    for(int i = binaryNumber.size()-1; i>=0; i--) {
+        exp = binaryNumber.size()-1 - i;
+        int digit = int(binaryNumber[i]) - int('0');
+        ans += digit*pow(2, exp);
+    }
+    return ans;
+
     return 0;
 }
 
