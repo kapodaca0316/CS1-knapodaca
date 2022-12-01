@@ -105,6 +105,19 @@
 | **Self Grade** | 100/100 |
 | **Notes** | I found this one fairly simple and it seemed to run without issues after multiple tests on the first try |
 
+### Lab #9
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | CS1-Lab-Vector |
+| **Description** | The following lab demonstrates the usage of vector data structure and some operations on vectors |
+| **Due Date** | 11/18/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/labs/vectors/main.cpp |
+| **Self Grade** | 90/100 |
+| **Notes** | On my first case, if the number starts with just a '.' my program breaks. I tried several ways to account for the bug and correct it, but I was stuck and couldn't figure it out. |
+
+
 ### Assignment #1
 
 | **Name** | Kyra Apodaca|
