@@ -64,7 +64,11 @@ int main()
                 break;
             case 2:
                 // FIXME4
-                cout << "FIXME\n";
+                //#FIXED#
+                cout << "Please endter a binary number: \n";
+                cin >> binary;
+                decimalNum = binToDec(binary);
+                printf("(11%u) base 2 = (%s) base 10\n", binary.c_str(), decimalNum);
                 break;
             case 3:
                 cout << "Enter a positive decimal number: ";
@@ -152,7 +156,7 @@ string decToOct(llu num)
         remainder = quotient%divisor;
         quotient = quotient/divisor;
         octal.push_back(remainder);
-        // cout << "quotient = " << quotient << " " << remainder << endl;
+        cout << "quotient = " << quotient << " " << remainder << endl;
     }
 
     // step 3. convert octal vector into string for easy printing the result
