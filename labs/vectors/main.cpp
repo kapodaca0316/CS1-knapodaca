@@ -50,7 +50,7 @@ int main()
     int choice;
     string octalNum, binary;
     do {
-        clearScreen();
+        //clearScreen();
         cout << "Program converts decimal number into binary and vice versa.\n";
         choice = menuOption();
         switch(choice) {
@@ -60,15 +60,15 @@ int main()
                 cout << "Enter a positive decimal number: \n";
                 cin >> decimalNum;
                 binary = decToBin(decimalNum);
-                printf("(11%u) base 10 = (%s) base 2\n", decimalNum, binary.c_str());
+                printf("(%llu) base 10 = (%s) base 2\n", decimalNum, binary.c_str());
                 break;
             case 2:
                 // FIXME4
                 //#FIXED#
-                cout << "Please endter a binary number: \n";
+                cout << "Please enter a binary number: \n";
                 cin >> binary;
                 decimalNum = binToDec(binary);
-                printf("(11%u) base 2 = (%s) base 10\n", binary.c_str(), decimalNum);
+                printf("(%s) base 2 = (%llu) base 10\n", binary.c_str(), decimalNum);
                 break;
             case 3:
                 cout << "Enter a positive decimal number: ";
@@ -108,7 +108,12 @@ string decToBin(llu num) {
     int i = 0;
     i++;
 
-    cout << "quotient = " << decimal << endl;
+    cout << "quotient = " << to_string(decimal)[0] << endl;
+
+    if (to_string(decimal)[0] == '.') {
+        //cout << "DEBUG" << endl;
+        decimal = 0;
+    }
     
     while (decimal != 0) {
         remainder = decimal%divisor;
@@ -127,11 +132,14 @@ llu binToDec(string binaryNumber)
     //#FIXED#
     llu ans = 0;
     int exp;
+    cout << binaryNumber.size() - 1 << endl;
+    
     for(int i = binaryNumber.size()-1; i>=0; i--) {
         exp = binaryNumber.size()-1 - i;
         int digit = int(binaryNumber[i]) - int('0');
         ans += digit*pow(2, exp);
     }
+    //cout << ans << endl;
     return ans;
 
     return 0;
