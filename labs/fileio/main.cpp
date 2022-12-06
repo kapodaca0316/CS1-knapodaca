@@ -55,8 +55,18 @@ void readData(vector<int> & numbers, const string inputFileName) {
     // FIXME3: Open inputFileName for reading data
     // read the data until eof marker and store each num into numbers vector
     fstream input;
-    input.open("...labs/files/networking.txt", ios_base::in|ios_base::out|ios_base::ate|ios_base::binary);
     int num;
+    string line;
+
+    input.open(inputFileName);
+
+    if (input.is_open()) {
+    while (getline(input, line)) {
+        numbers.push_back(stoi(line));
+    input.close();
+    }
+    } else 
+        cout << "File not found" << endl;
 }
 
 void writeData(const vector<int> & numbers) {
@@ -67,7 +77,43 @@ void writeData(const vector<int> & numbers) {
     2. Store and use the file name to open the file in write mode
     3. Write output as shown in output.txt file with proper formatting using iomanip
     */
-   
+    ofstream output;
+    int num;
+    string line;
+    string outputFile;
+
+    cout << "Enter output file name:" << endl;
+    cin >> outputFile;
+
+    int min, max, range;
+    float median, mean;
+
+    min = findMin(numbers);
+    max = findMax(numbers);
+    range = findRange(numbers);
+    median = findMedian(numbers);
+    mean = findMean(numbers);
+
+
+    output.open("...labs/files/" + outputFile);
+
+    output << "List of Numbers: ";
+
+    for (auto i = numbers.begin(); i != numbers.end(); ++i)
+        output << *i << " ";
+
+    output << endl;
+    output << endl;
+
+    output << setw(40) << setfill('=') << "" << endl;
+
+    output << '\t' << '\t' << '\t' << "Statistical Results" << endl;
+
+    output << setw(40) << setfill('=') << "" << endl;
+
+    output << "Max" << '\t' << "Min" << '\t' << "Mean" << '\t' << "Median" << '\t' << "Range" << endl;
+
+    output << max << '\t' << min << '\t' << mean << '\t' << median << '\t' << range;
 }
 
 int findMax(const vector<int> & nums) {
@@ -79,6 +125,10 @@ int findMax(const vector<int> & nums) {
 
 int findMin(const vector<int> & nums) {
     // FIXME5 - implement function to find and return min value from nums vector
+     int min = nums[0];
+    for(int n: nums)
+        min = (n<min) ? n : min;
+    return min;
     return 0;
 } 
 
@@ -93,6 +143,11 @@ float findMean(const vector<int> & nums) {
 int findRange(const vector<int> & nums) {
     // FIXME6 - implement function that finds and returns the range value
     // range = max - min
+    int range, minimum, maximum; 
+    minimum = findMin(nums);
+    maximum = findMax(nums);
+    range = maximum - minimum;
+
     return 0;
 }
 
@@ -118,6 +173,10 @@ void test() {
     assert(findMax(numbers1) == 10);
     assert(findMedian(numbers1) == 5);
     // FIXME7: Write at least two test cases for other functions
+    assert(findMin(numbers) == -99);
+    assert(findMin(numbers1)== -10);
+    assert(findRange(numbers) == 199);
+    assert(findRange(numbers1) == 20);
 
     cerr << "all test cases passed!\n";
 }
