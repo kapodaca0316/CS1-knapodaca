@@ -1,0 +1,20 @@
+maroon
+coral
+indigo
+brown
+aquamarine
+salmon
+turquois
+mint green
+magenta
+asphalt grey
+burnt orange
+chartreuse
+mauve
+cyan
+forest green
+aqua blue
+white
+black
+pink
+lavender

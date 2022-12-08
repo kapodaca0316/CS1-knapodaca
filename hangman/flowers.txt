@@ -1,0 +1,20 @@
+chrysanthemum
+dahlia
+azalea
+bluebonnet
+crocus
+daffodil
+marigold
+petunia
+carnation
+iris
+lavender
+morning glory
+hyacinth
+pansy
+snowdrop
+buttercup
+lilac
+snapdragon
+cosmos
+wisteria
