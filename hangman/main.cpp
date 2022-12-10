@@ -127,7 +127,7 @@ bool program() {
                     fileInput.open("../labs/files/flowers.txt", ios_base::ate);
                     int counter = 0;
                     string line;
-                    string secret[0];
+                    secret[0];
     
                     if (fileInput.is_open()) {
                     while (getline(fileInput, line)) {
