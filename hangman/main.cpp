@@ -13,7 +13,12 @@ Date: 12/01/2022
 using namespace std;
  
 
-void printDifficulty(void);
+void printDifficulty();
+void printEasy();
+void printMedium();
+void printHard();
+int readValue(int);
+void checkLetter();
 bool program();
 
 
@@ -48,7 +53,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-void printDifficulty(void) {
+void printDifficulty() {
     cout << "Choose difficulty:\n";
     cout << "[1] Easy\n";
     cout << "[2] Medium\n";
@@ -84,21 +89,13 @@ bool program() {
      
     printDifficulty();
     
-    do {
-        if (cin >> option && option >= 1 && option <= 4) {
-            break;
-        }
-        else {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid option, please enter a value between 1 and 8" << endl;
-        }
-    } while (true);
+    readValue(4);
             
     switch(option) {
         case 1:
         {
             printEasy();
+            int category = readValue(3);
 
             switch(option) {
                 case 1:
@@ -122,11 +119,23 @@ bool program() {
         case 2:
         {
             printMedium();
+            int category = readValue(3);
 
             switch(option) {
                 case 1:
                 {
                     fileInput.open("../labs/files/flowers.txt", ios_base::ate);
+                    int counter = 0;
+                    string line;
+                    string secret[0];
+    
+                    if (fileInput.is_open()) {
+                    while (getline(fileInput, line)) {
+                        secret.push_back(line);
+                        fileInput.close();
+                    }
+    } else 
+        cout << "File not found" << endl;
                     break;
                 }
                 case 2:
@@ -145,6 +154,7 @@ bool program() {
         case 3:
         {
             printHard();
+            int category = readValue(3);
 
             switch(option) {
                 case 1:
@@ -165,8 +175,59 @@ bool program() {
             break;
         }
         case 4:
+        {
         default:
             return false;
+        }
     }
     return true;
+}
+}
+
+int readValue(int numOpts) {
+    int opt = 1;
+
+    do {
+        if (cin >> opt && opt >= 1 && opt <= numOpts) {
+            break;
+        }
+        else {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid option, please enter a value between 1 and 4" << endl;
+        }
+    } while (true);
+
+    return opt;
+}
+
+void checkLetter() {
+    char guess;
+
+    cout << "     |----------" << endl;
+    cout << "     |/    |" << endl;
+    cout << "     |" << endl;
+    cout << "     |" << endl;
+    cout << "     |" << endl;
+    cout << "     |" << endl;
+    cout << "     |" << endl;
+    cout << "===========" << endl;
+    cout << endl;
+
+    
+    cout << "Guess a letter: " << endl;
+    cin >> guess;
+
+    if (guess == 'r'){
+
+    }
+}
+
+
+string secretWord() {
+
+}
+
+void makeArray(string word[0], const string fileInput) {
+    
 }
