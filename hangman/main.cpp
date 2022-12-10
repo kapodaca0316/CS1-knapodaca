@@ -6,9 +6,12 @@ Date: 12/01/2022
 */
 
 #include <iostream>
+#include <iomanip>
 #include <cstdio>
 #include <string>
 #include <fstream>
+#include <vector>
+#include <algorithm>
  
 using namespace std;
  
@@ -17,10 +20,10 @@ void printDifficulty();
 void printEasy();
 void printMedium();
 void printHard();
+bool program();
 int readValue(int);
 void checkLetter();
-bool program();
-
+string randomWord(vector<string> &);
 
 void clearScreen() {
     #ifdef _WIN32
@@ -86,6 +89,8 @@ void printHard() {
 bool program() {
     int option = 1; 
     fstream fileInput;
+    vector<string> secret;
+    string inFile;
      
     printDifficulty();
     
@@ -100,7 +105,8 @@ bool program() {
             switch(option) {
                 case 1:
                 {
-                    fileInput.open("../labs/files/winterholiday.txt", ios_base::ate);
+                    makeArray(secret, inFile);
+                    randomWord(secret);
                     break;
                 }
                 case 2:
@@ -125,17 +131,6 @@ bool program() {
                 case 1:
                 {
                     fileInput.open("../labs/files/flowers.txt", ios_base::ate);
-                    int counter = 0;
-                    string line;
-                    secret[0];
-    
-                    if (fileInput.is_open()) {
-                    while (getline(fileInput, line)) {
-                        secret.push_back(line);
-                        fileInput.close();
-                    }
-    } else 
-        cout << "File not found" << endl;
                     break;
                 }
                 case 2:
@@ -223,11 +218,37 @@ void checkLetter() {
     }
 }
 
+void makeArray(vector<string> & secret, const string fileInput) {
+    int counter = 0;
+    string line;
+    fstream fin;
+    //vector<string> secret;
 
-string secretWord() {
-
+    fin.open("../labs/files/" + fileInput);
+    
+    if (fin.is_open()) {
+    while (getline(fin, line)) {
+        secret.push_back(line);
+    fin.close();
+    }
+    } else 
+    cout << "File not found" << endl;
 }
 
-void makeArray(string word[0], const string fileInput) {
+string randomWord(vector<string> & secret) {
+    secret.size();
     
+    srand(time(0));
+
+    int secretNumber = 1 + (rand() % 20);
+
+    string word = secret[secretNumber];
+
+    return word;
+}
+
+string display(string word) {
+    int len = word.length();
+    string hiddenWord = setw(len) << setfill('-') << "" << endl;
+    hiddenWord = word;
 }
