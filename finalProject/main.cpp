@@ -22,8 +22,10 @@ void printMedium();
 void printHard();
 bool program();
 int readValue(int);
-void checkLetter();
 string randomWord(vector<string> &);
+string display(string);
+bool checkLetter(string, string *, vector<char> &);
+void printGallows(int);
 
 void clearScreen() {
     #ifdef _WIN32
@@ -90,7 +92,8 @@ bool program() {
     int option = 1; 
     fstream fileInput;
     vector<string> secret;
-    string inFile;
+    string inFile, randWord;
+    vector<string> letterBank;
      
     printDifficulty();
     
@@ -105,8 +108,9 @@ bool program() {
             switch(option) {
                 case 1:
                 {
+                    inFile = "winterholiday.txt";
                     makeArray(secret, inFile);
-                    randomWord(secret);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 2:
@@ -196,33 +200,10 @@ int readValue(int numOpts) {
     return opt;
 }
 
-void checkLetter() {
-    char guess;
-
-    cout << "     |----------" << endl;
-    cout << "     |/    |" << endl;
-    cout << "     |" << endl;
-    cout << "     |" << endl;
-    cout << "     |" << endl;
-    cout << "     |" << endl;
-    cout << "     |" << endl;
-    cout << "===========" << endl;
-    cout << endl;
-
-    
-    cout << "Guess a letter: " << endl;
-    cin >> guess;
-
-    if (guess == 'r'){
-
-    }
-}
-
 void makeArray(vector<string> & secret, const string fileInput) {
     int counter = 0;
     string line;
     fstream fin;
-    //vector<string> secret;
 
     fin.open("../finalProject/files/" + fileInput);
     
@@ -249,6 +230,137 @@ string randomWord(vector<string> & secret) {
 
 string display(string word) {
     int len = word.length();
-    string hiddenWord = setw(len) << setfill('-') << "" << endl;
-    hiddenWord = word;
+    string hiddenWord(len, '-');
+
+    return hiddenWord;
 }
+
+bool checkLetter(string word, string *hiddenWord, vector<string> & letterBank) {
+    string guess;
+    bool found = false;
+
+    cout << "Guess a letter: " << endl;
+    cin >> guess;
+    
+    int pos = word.find(guess);
+
+    letterBank.push_back(guess);
+
+    if (pos != string::npos) {
+        do {
+            (*hiddenWord).replace(pos, 1, guess);
+            pos = word.find(guess, pos + 1);
+        } while (pos != string::npos);
+            found = true;
+    }
+    
+    return found;
+}
+
+void printArray(vector<char> & letterBank, int len) {
+	cout << "[ ";
+	for (int i = 0; i < len; i++)
+		cout << letterBank << " ";
+	cout << "]" << endl;
+}
+
+void printGallows(int added) {
+    switch(added) {
+        case 0:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 1:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 2:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 3:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    /|" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 4:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    /|\\" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 5:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    /|\\" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |    /" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+
+        case 6:
+        {
+            cout << "     |----------" << endl;
+            cout << "     |/    |" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    ( )" << endl;
+            cout << "     |     -" << endl;
+            cout << "     |    /|\\" << endl;
+            cout << "     |     |" << endl;
+            cout << "     |    / \\" << endl;
+            cout << "     |" << endl;
+            cout << "===========" << endl;
+        }
+    }
+}
+
