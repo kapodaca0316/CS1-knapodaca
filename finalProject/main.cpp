@@ -111,12 +111,12 @@ bool program() {
                 }
                 case 2:
                 {
-                    fileInput.open("../labs/files/pizzatoppings.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/pizzatoppings.txt", ios_base::ate);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../labs/files/colors.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/colors.txt", ios_base::ate);
                     break;
                 }
             }
@@ -130,17 +130,17 @@ bool program() {
             switch(option) {
                 case 1:
                 {
-                    fileInput.open("../labs/files/flowers.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/flowers.txt", ios_base::ate);
                     break;
                 }
                 case 2:
                 {
-                    fileInput.open("../labs/files/icecreamflavors.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/icecreamflavors.txt", ios_base::ate);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../labs/files/tools.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/tools.txt", ios_base::ate);
                     break;
                 }
             }
@@ -154,17 +154,17 @@ bool program() {
             switch(option) {
                 case 1:
                 {
-                    fileInput.open("../labs/files/dogbreeds.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/dogbreeds.txt", ios_base::ate);
                     break;
                 }
                 case 2:
                 {
-                    fileInput.open("../labs/files/oceananimals.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/oceananimals.txt", ios_base::ate);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../labs/files/olympicsports.txt", ios_base::ate);
+                    fileInput.open("../finalProject/files/olympicsports.txt", ios_base::ate);
                     break;
                 }
             break;
@@ -224,7 +224,7 @@ void makeArray(vector<string> & secret, const string fileInput) {
     fstream fin;
     //vector<string> secret;
 
-    fin.open("../labs/files/" + fileInput);
+    fin.open("../finalProject/files/" + fileInput);
     
     if (fin.is_open()) {
     while (getline(fin, line)) {
