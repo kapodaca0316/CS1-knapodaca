@@ -1,5 +1,5 @@
 pepperoni
-green pepper 
+green pepper
 bannana pepper
 mushroom
 anchovy
@@ -16,5 +16,5 @@ feta cheese
 spinach
 bacon
 red peppers
-red pepper flakes
+red pepper
 parmesan

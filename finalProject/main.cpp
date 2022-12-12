@@ -3,6 +3,26 @@ Conditional Lab
 Name: Kyra Apodaca 
     Hang Man
 Date: 12/01/2022
+
+Steps:
+- make nested switch to pick difficulty and word bank
+- make function to choose a random word from appropriate word bank
+- make a function to "hide" the random word from the player
+- make a function that takes in a guess and checks to see if it is in the word
+    loop this function to make sure the player can continue guessing
+    make a function that chooses the switch for the correct set of gallows based on their input
+    make the function break after 6 wrong guesses
+    if they do not guess the word correct, print out the answer to the screen
+    clear screen in between iterations 
+
+screen display ex)
+    Gallows
+        skip
+    Hashes for letters in word
+        skip
+    Guess a letter:
+        skip
+    Letter Bank:
 */
 
 #include <iostream>
@@ -22,9 +42,11 @@ void printMedium();
 void printHard();
 bool program();
 int readValue(int);
+void makeArray(vector<string> &, const string);
 string randomWord(vector<string> &);
 string display(string);
-bool checkLetter(string, string *, vector<char> &);
+bool checkLetter(string, string *, vector<string> &);
+void printArray(vector<string> & letterBank, int len);
 void printGallows(int);
 
 void clearScreen() {
@@ -36,9 +58,7 @@ void clearScreen() {
 }
 
 int main(int argc, char* argv[]) {
-    bool keeprunning = true;
     if(argc == 2 && string(argv[1]) == "test") {
-        //test();
         exit(EXIT_SUCCESS);
     }
     else {
@@ -89,15 +109,16 @@ void printHard() {
 }
 
 bool program() {
-    int option = 1; 
+    int option; 
     fstream fileInput;
     vector<string> secret;
     string inFile, randWord;
     vector<string> letterBank;
+    int guessCount = 0;
      
     printDifficulty();
     
-    readValue(4);
+    option = readValue(4);
             
     switch(option) {
         case 1:
@@ -105,7 +126,7 @@ bool program() {
             printEasy();
             int category = readValue(3);
 
-            switch(option) {
+            switch(category) {
                 case 1:
                 {
                     inFile = "winterholiday.txt";
@@ -115,12 +136,16 @@ bool program() {
                 }
                 case 2:
                 {
-                    fileInput.open("../finalProject/files/pizzatoppings.txt", ios_base::ate);
+                    inFile = "pizzatoppings.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../finalProject/files/colors.txt", ios_base::ate);
+                    inFile = "colors.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
             }
@@ -131,20 +156,26 @@ bool program() {
             printMedium();
             int category = readValue(3);
 
-            switch(option) {
+            switch(category) {
                 case 1:
                 {
-                    fileInput.open("../finalProject/files/flowers.txt", ios_base::ate);
+                    inFile = "flowers.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 2:
                 {
-                    fileInput.open("../finalProject/files/icecreamflavors.txt", ios_base::ate);
+                    inFile = "icecreamflavors.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../finalProject/files/tools.txt", ios_base::ate);
+                    inFile = "tools.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
             }
@@ -155,33 +186,70 @@ bool program() {
             printHard();
             int category = readValue(3);
 
-            switch(option) {
+            switch(category) {
                 case 1:
                 {
-                    fileInput.open("../finalProject/files/dogbreeds.txt", ios_base::ate);
+                    inFile = "dogbreeds.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 2:
                 {
-                    fileInput.open("../finalProject/files/oceananimals.txt", ios_base::ate);
+                    inFile = "oceananimals.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
                 }
                 case 3:
                 {
-                    fileInput.open("../finalProject/files/olympicsports.txt", ios_base::ate);
+                    inFile = "olympicsports.txt";
+                    makeArray(secret, inFile);
+                    randWord = randomWord(secret);
                     break;
+                }
                 }
             break;
         }
         case 4:
         {
-        default:
             return false;
         }
     }
+
+    printGallows(0);
+    string hashes = display(randWord);
+    string * ihashes = & hashes;
+
+    cout << hashes << endl;
+
+    while (true) {
+    bool guessResult = checkLetter(randWord, ihashes, letterBank);
+    if (guessResult == false) {
+        guessCount++;
+    }
+    printGallows(guessCount);
+    cout << endl;
+    cout << hashes;
+    cout << endl;
+    printArray(letterBank, letterBank.size());
+    cout << endl;
+
+    if (hashes.find('-') == string::npos) {
+        cout << "You got it!" << endl;
+        break;
+    }
+
+    if (guessCount == 6) {
+        cout << "Sorry, you're out of tries..." << endl;
+        cout << randWord;
+        break;
+    }
+    }
+
     return true;
 }
-}
+
 
 int readValue(int numOpts) {
     int opt = 1;
@@ -205,13 +273,13 @@ void makeArray(vector<string> & secret, const string fileInput) {
     string line;
     fstream fin;
 
-    fin.open("../finalProject/files/" + fileInput);
+    fin.open("../finalProject/" + fileInput);
     
     if (fin.is_open()) {
     while (getline(fin, line)) {
         secret.push_back(line);
-    fin.close();
     }
+    fin.close();
     } else 
     cout << "File not found" << endl;
 }
@@ -229,10 +297,21 @@ string randomWord(vector<string> & secret) {
 }
 
 string display(string word) {
-    int len = word.length();
-    string hiddenWord(len, '-');
+    size_t delimeter = word.find(" ");
+    string tmpstr1, tmpstr2;
 
-    return hiddenWord;
+    if (delimeter != string::npos) {
+        tmpstr1 = word.substr(0, delimeter);
+        tmpstr2 = word.substr(delimeter + 1, word.length() - (delimeter + 1));
+    } else {
+        tmpstr1 = word;
+        tmpstr2 = "";
+    }
+
+    string hiddenWord1 (tmpstr1.length(), '-');
+    string hiddenWord2 (tmpstr2.length(), '-');
+
+    return hiddenWord1 + " " + hiddenWord2;
 }
 
 bool checkLetter(string word, string *hiddenWord, vector<string> & letterBank) {
@@ -244,7 +323,7 @@ bool checkLetter(string word, string *hiddenWord, vector<string> & letterBank) {
     
     int pos = word.find(guess);
 
-    letterBank.push_back(guess);
+    letterBank.push_back(guess + " ");
 
     if (pos != string::npos) {
         do {
@@ -257,11 +336,11 @@ bool checkLetter(string word, string *hiddenWord, vector<string> & letterBank) {
     return found;
 }
 
-void printArray(vector<char> & letterBank, int len) {
-	cout << "[ ";
-	for (int i = 0; i < len; i++)
-		cout << letterBank << " ";
-	cout << "]" << endl;
+void printArray(vector<string> & letterBank, int len) {
+	cout << "Letter Bank: ";
+    for (int i = 0; i < letterBank.size(); i++) {
+        cout << letterBank[i];
+    }
 }
 
 void printGallows(int added) {
@@ -276,6 +355,7 @@ void printGallows(int added) {
             cout << "     |" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 1:
@@ -290,6 +370,7 @@ void printGallows(int added) {
             cout << "     |" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 2:
@@ -304,6 +385,7 @@ void printGallows(int added) {
             cout << "     |" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 3:
@@ -318,6 +400,7 @@ void printGallows(int added) {
             cout << "     |" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 4:
@@ -332,6 +415,7 @@ void printGallows(int added) {
             cout << "     |" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 5:
@@ -346,6 +430,7 @@ void printGallows(int added) {
             cout << "     |    /" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
 
         case 6:
@@ -360,6 +445,7 @@ void printGallows(int added) {
             cout << "     |    / \\" << endl;
             cout << "     |" << endl;
             cout << "===========" << endl;
+            break;
         }
     }
 }
