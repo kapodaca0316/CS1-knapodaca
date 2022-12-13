@@ -1,4 +1,5 @@
 #include "includes.h"
+#include "utilities.h"
 
 int readValue(int numOpts) {
     int opt = 1;

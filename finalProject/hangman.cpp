@@ -1,6 +1,6 @@
-#include "includes.h"
 #include "utilities.h"
 #include "menus.h"
+#include "hangman.h"
 
 string randomWord(vector<string> & secret) {
     secret.size();

@@ -1,4 +1,5 @@
 #include "includes.h"
+#include "menus.h"
 
 void printDifficulty() {
     cout << "Choose difficulty:\n";
