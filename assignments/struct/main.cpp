@@ -15,5 +15,35 @@ D (60% - 69%)
 F (59% and less) 
 
 5.Write the values to the output text file using the tabular format as shown in the provided sample file called cs112.out.
-Write a function and use it to sort the array of students' records in descending order
+6.Write a function and use it to sort the array of students' records in descending order
 */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+
+
+
+}
+
+void makeArray(vector<string> & grades, const string fileInput) {
+    int counter = 0;
+    string line;
+    fstream fin;
+
+    fin.open("../assignments/struct/" + fileInput);
+    
+    if (fin.is_open()) {
+    while (getline(fin, line)) {
+        grades.push_back(line);
+    }
+    fin.close();
+    } else 
+    cout << "File not found" << endl;
+}

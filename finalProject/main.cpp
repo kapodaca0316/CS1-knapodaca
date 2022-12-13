@@ -33,9 +33,11 @@ screen display ex)
 // #include <vector>
 // #include <algorithm>
  
-// using namespace std;
 #include "hangman.h"
+//#include "utilities.h"
+//#include "menus.h"
  
+//using namespace std;
 
 // void printDifficulty();
 // void printEasy();
