@@ -63,21 +63,42 @@ void makeArray(vector<string> & students, const string fileInput) {
 
 
 string student(vector<string> & students) {
+    vector<vector<string>> names;
+    vector<vector<int>> grades;
 
     for (int i = 0; i < students.size(); i ++) {
         size_t delimeter = students[i].find(" ");
-        string firstName, lastName, tests;
+        string firstName, lastName, strtests;
 
     if (delimeter != string::npos) {
         firstName = students[i].substr(0, delimeter);
         size_t word2 = students[i].find(" ", delimeter + 1);
         lastName = students[i].substr(delimeter + 1, (word2 - delimeter));
-        string tests = students[i].substr(word2 + 1, students[i].length() - (word2 + delimeter + 2));
+        names.push_back({firstName, lastName});
+        strtests = students[i].substr(word2 + 1, students[i].length());
     }
+
+    string delimiter = " ";
+    size_t pos = strtests.find(delimiter);
+    vector<int> tests;
+    int start = 0;
+    string newTest = strtests;
+
+    do
+        {
+            tests.push_back(newTest.substr(start, pos));
+            newTest = newTest.substr(pos + 1, newTest.length() - (pos + 1));
+            pos = newTest.find(delimiter);
+            if(pos == string::npos) {
+               tests.push_back(newTest);
+            }
+        } while (pos != string::npos);
 
     cout << firstName << endl;
     cout << lastName << endl;
     cout << tests << endl;
     }
+
+    
 
 }
