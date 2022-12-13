@@ -129,7 +129,8 @@ bool program() {
             switch(category) {
                 case 1:
                 {
-                    inFile = "winterholiday.txt";
+                    //inFile = "winterholiday.txt";
+                    inFile = "test.txt";
                     makeArray(secret, inFile);
                     randWord = randomWord(secret);
                     break;
@@ -297,21 +298,36 @@ string randomWord(vector<string> & secret) {
 }
 
 string display(string word) {
-    size_t delimeter = word.find(" ");
-    string tmpstr1, tmpstr2;
-
-    if (delimeter != string::npos) {
-        tmpstr1 = word.substr(0, delimeter);
-        tmpstr2 = word.substr(delimeter + 1, word.length() - (delimeter + 1));
+    int delimiter = word.find(" ");
+    vector<string> words;
+    string hiddenWord = "";
+ 
+    if (delimiter != string::npos) {
+         int start = 0;
+         int end =  word.length() - (delimiter + 1);
+        do {         
+            words.push_back(word.substr(start, end));
+            delimiter = word.find(" ", delimiter + 1);
+            start = delimiter + 1;
+            end = word.length() - (delimiter + 1);
+            cout << start << endl;
+            cout << end << endl;
+            cout << delimiter << endl;
+        } while (delimiter != string::npos);
     } else {
-        tmpstr1 = word;
-        tmpstr2 = "";
+        words.push_back(word);
     }
 
-    string hiddenWord1 (tmpstr1.length(), '-');
-    string hiddenWord2 (tmpstr2.length(), '-');
+    for (int i = 0; i < words.size(); i++) {
+        string temp(words[i].length(), '-');
+       if(i!=0)
+           hiddenWord += " ";
+        hiddenWord += temp;
+    }
 
-    return hiddenWord1 + " " + hiddenWord2;
+    cout << word << endl;
+
+    return hiddenWord;
 }
 
 bool checkLetter(string word, string *hiddenWord, vector<string> & letterBank) {
