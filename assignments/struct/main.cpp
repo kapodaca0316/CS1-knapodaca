@@ -71,7 +71,7 @@ string student(vector<string> & students) {
     if (delimeter != string::npos) {
         firstName = students[i].substr(0, delimeter);
         size_t word2 = students[i].find(" ", delimeter + 1);
-        lastName = students[i].substr(delimeter + 1, word2);
+        lastName = students[i].substr(delimeter + 1, (word2 - delimeter));
         string tests = students[i].substr(word2 + 1, students[i].length() - (word2 + delimeter + 2));
     }
 

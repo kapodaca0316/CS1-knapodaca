@@ -8,4 +8,4 @@ Hillary Clinton 90 91 93 95
 Sally Railey 65 70 75 78
 Tom Jerry 85 90 97 98
 Bill Kool 65 75 65 66
-Alice Wood	44 75 88 99
+Alice Wood 44 75 88 99
