@@ -26,24 +26,58 @@ F (59% and less)
 
 using namespace std;
 
+void makeArray(vector<string> &, const string);
+string student(vector<string> &);
+
 int main(int argc, char* argv[]) {
+    vector<string> students;
+    string fin;
 
+    cout << "Enter a file name: " << endl;
 
+    cin >> fin;
+    //cout << fin << endl;
+
+    makeArray(students, fin);
+    student(students);
+
+return 0;
 
 }
 
-void makeArray(vector<string> & grades, const string fileInput) {
+void makeArray(vector<string> & students, const string fileInput) {
     int counter = 0;
     string line;
     fstream fin;
 
-    fin.open("../assignments/struct/" + fileInput);
+    fin.open(fileInput);
     
     if (fin.is_open()) {
     while (getline(fin, line)) {
-        grades.push_back(line);
+        students.push_back(line);
     }
     fin.close();
     } else 
     cout << "File not found" << endl;
+}
+
+
+string student(vector<string> & students) {
+
+    for (int i = 0; i < students.size(); i ++) {
+        size_t delimeter = students[i].find(" ");
+        string firstName, lastName, tests;
+
+    if (delimeter != string::npos) {
+        firstName = students[i].substr(0, delimeter);
+        size_t word2 = students[i].find(" ", delimeter + 1);
+        lastName = students[i].substr(delimeter + 1, word2);
+        string tests = students[i].substr(word2 + 1, students[i].length() - (word2 + delimeter + 2));
+    }
+
+    cout << firstName << endl;
+    cout << lastName << endl;
+    cout << tests << endl;
+    }
+
 }
