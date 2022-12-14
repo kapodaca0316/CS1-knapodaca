@@ -125,9 +125,9 @@ vector<student> getStudents(vector<string> & students) {
     
     studentList.push_back(sStudent);  
 
-    return studentList;
-
 }
+
+    return studentList;
 }
 
 float findAvg(vector<int> scores) {
@@ -169,6 +169,8 @@ void output(vector<student> studentList) {
     string outputFile;
     float avg;
 
+
+    cout << studentList.size() << endl;
     cout << "Enter output file name:" << endl;
     cin >> outputFile;
 
@@ -181,6 +183,7 @@ void output(vector<student> studentList) {
     output << setw(100) << setfill('=') << "" << endl;
 
     sort(studentList.begin(), studentList.end(), compare);
+    cout << studentList.size();
 
     for (int i = 0; i < studentList.size(); ++i) {
         
