@@ -38,8 +38,6 @@ void output(vector<student>);
 
 int main(int argc, char* argv[]) {
     vector<string> students;
-    vector<vector<string>> names;
-    vector<vector<int>> grades;
     vector<student> studentGrades;
     string fin;
 
@@ -50,6 +48,8 @@ int main(int argc, char* argv[]) {
     makeArray(students, fin);
 
     studentGrades = getStudents(students);
+
+    output(studentGrades);
 
 
 return 0;
@@ -180,7 +180,7 @@ void output(vector<student> studentList) {
 
     output << setw(100) << setfill('=') << "" << endl;
 
-    sort(studentList, 11, compare);
+    sort(studentList.begin(), studentList.end(), compare);
 
     for (int i = 0; i < studentList.size(); ++i) {
         
@@ -191,15 +191,6 @@ void output(vector<student> studentList) {
     }
 
     output << endl;
-    output << endl;
 
     output << setw(100) << setfill('=') << "" << endl;
-
-    output << '\t' << '\t' << '\t' << "Statistical Results" << endl;
-
-    output << setw(40) << setfill('=') << "" << endl;
-
-    output << "Max" << '\t' << "Min" << '\t' << "Mean" << '\t' << "Median" << '\t' << "Range" << endl;
-
-    //output << max << '\t' << min << '\t' << mean << '\t' << median << '\t' << range;
 }
