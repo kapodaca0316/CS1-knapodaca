@@ -67,13 +67,13 @@ string student(vector<string> & students) {
     vector<vector<int>> grades;
 
     for (int i = 0; i < students.size(); i ++) {
-        size_t delimeter = students[i].find(" ");
+        size_t pos1 = students[i].find(" ");
         string firstName, lastName, strtests;
 
-    if (delimeter != string::npos) {
-        firstName = students[i].substr(0, delimeter);
-        size_t word2 = students[i].find(" ", delimeter + 1);
-        lastName = students[i].substr(delimeter + 1, (word2 - delimeter));
+    if (pos1 != string::npos) {
+        firstName = students[i].substr(0, pos1);
+        size_t word2 = students[i].find(" ", pos1 + 1);
+        lastName = students[i].substr(pos1 + 1, (word2 - pos1));
         names.push_back({firstName, lastName});
         strtests = students[i].substr(word2 + 1, students[i].length());
     }
@@ -86,19 +86,14 @@ string student(vector<string> & students) {
 
     do
         {
-            tests.push_back(newTest.substr(start, pos));
+            tests.push_back(stoi(newTest.substr(start, pos)));
             newTest = newTest.substr(pos + 1, newTest.length() - (pos + 1));
             pos = newTest.find(delimiter);
             if(pos == string::npos) {
-               tests.push_back(newTest);
+               tests.push_back(stoi(newTest));
             }
         } while (pos != string::npos);
 
-    cout << firstName << endl;
-    cout << lastName << endl;
-    cout << tests << endl;
-    }
-
-    
+    grades.push_back(tests);    
 
 }
