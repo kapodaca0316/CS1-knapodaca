@@ -23,11 +23,18 @@ F (59% and less)
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <iomanip>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 void makeArray(vector<string> &, const string);
 struct student;
+vector<student> getStudents(vector<string> &);
+float findAvg(vector<int>);
+char letterGrade(float);
+bool compare(student, student);
+void output(vector<student>);
 
 int main(int argc, char* argv[]) {
     vector<string> students;
@@ -41,7 +48,9 @@ int main(int argc, char* argv[]) {
     cin >> fin;
 
     makeArray(students, fin);
-    //student(students);
+
+    studentGrades = getStudents(students);
+
 
 return 0;
 
@@ -67,10 +76,13 @@ struct student {
     string lastName;
     string firstName;
     vector<int> tests;
+    float avg;
+    char letterGrade;
 };
 
 vector<student> getStudents(vector<string> & students) {
     vector<student> studentList;
+
     for (int i = 0; i < students.size(); i ++) {
         size_t pos1 = students[i].find(" ");
         string firstName, lastName, strtests;
@@ -104,8 +116,14 @@ vector<student> getStudents(vector<string> & students) {
     sStudent.firstName = firstName;
     sStudent.lastName = lastName;
     sStudent.tests = tests;
+
+
+    float avg = findAvg(tests);
+
+    sStudent.avg = avg;
+    sStudent.letterGrade = letterGrade(avg);
     
-    studentList.push_back(sStudent);    
+    studentList.push_back(sStudent);  
 
     return studentList;
 
@@ -135,4 +153,53 @@ char letterGrade(float avg) {
     } else {
         return 'F';
     }
+}
+
+bool compare(student a, student b)
+{
+    if (a.avg != b.avg)
+        return a.avg > b.avg;
+ 
+    return (a.avg > b.avg);
+}
+
+void output(vector<student> studentList) {
+    ofstream output;
+    string line;
+    string outputFile;
+    float avg;
+
+    cout << "Enter output file name:" << endl;
+    cin >> outputFile;
+
+    output.open(outputFile);
+
+    output << "First Name" << '\t' << "Last Name" << '\t' 
+            << "Test 1" << '\t' << "Test 2" << '\t' << "Test 3" << '\t' << "Test 4" << '\t'
+            << "Average" << '\t' << "Grade" << endl;
+
+    output << setw(100) << setfill('=') << "" << endl;
+
+    sort(studentList, 11, compare);
+
+    for (int i = 0; i < studentList.size(); ++i) {
+        
+        output << studentList[i].firstName << '\t' << studentList[i].lastName
+                << '\t' << studentList[i].tests[0] << '\t' << studentList[i].tests[1]
+                << '\t' << studentList[i].tests[2] << '\t' << studentList[i].tests[3] 
+                << '\t' << studentList[i].avg << '\t' << studentList[i].letterGrade << endl;
+    }
+
+    output << endl;
+    output << endl;
+
+    output << setw(100) << setfill('=') << "" << endl;
+
+    output << '\t' << '\t' << '\t' << "Statistical Results" << endl;
+
+    output << setw(40) << setfill('=') << "" << endl;
+
+    output << "Max" << '\t' << "Min" << '\t' << "Mean" << '\t' << "Median" << '\t' << "Range" << endl;
+
+    //output << max << '\t' << min << '\t' << mean << '\t' << median << '\t' << range;
 }
