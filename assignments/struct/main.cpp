@@ -128,7 +128,7 @@ vector<student> getStudents(vector<string> & students) {
     size_t pos = strtests.find(delimiter);
     vector<int> tests;
     int start = 0;
-    string newTest = strtests;
+    string newTest = trim(strtests);
 
     do
         {
@@ -162,7 +162,7 @@ vector<student> getStudents(vector<string> & students) {
 float findAvg(vector<int> scores) {
     int overallScore = 0;
 
-    for (int i = 0; i > scores.size(); i++){
+    for (int i = 0; i < scores.size(); i++){
         overallScore += scores[i];
     }
     float avg = (overallScore)/scores.size();
@@ -198,28 +198,25 @@ void output(vector<student> studentList) {
     string outputFile;
     float avg;
 
-
-    cout << studentList.size() << endl;
     cout << "Enter output file name:" << endl;
     cin >> outputFile;
 
     output.open(outputFile);
 
-    output << "First Name" << '\t' << "Last Name" << '\t' 
+    output << "First Name" << '\t' << '\t' << "Last Name" << '\t' << '\t'
             << "Test 1" << '\t' << "Test 2" << '\t' << "Test 3" << '\t' << "Test 4" << '\t'
             << "Average" << '\t' << "Grade" << endl;
 
     output << setw(100) << setfill('=') << "" << endl;
 
     sort(studentList.begin(), studentList.end(), compare);
-    cout << studentList.size();
 
     for (int i = 0; i < studentList.size(); ++i) {
         
-        output << studentList[i].firstName << '\t' << studentList[i].lastName
-                << '\t' << studentList[i].tests[0] << '\t' << studentList[i].tests[1]
-                << '\t' << studentList[i].tests[2] << '\t' << studentList[i].tests[3] 
-                << '\t' << studentList[i].avg << '\t' << studentList[i].letterGrade << endl;
+        output << studentList[i].firstName << '\t'  << '\t' << studentList[i].lastName
+                << '\t' <<  '\t' <<studentList[i].tests[0] << '\t' << '\t' <<  studentList[i].tests[1]
+                << '\t' << '\t' <<studentList[i].tests[2] << '\t' << '\t' << studentList[i].tests[3] 
+                << '\t' << '\t' << studentList[i].avg << '\t' << studentList[i].letterGrade << endl;
     }
 
     output << endl;

@@ -201,3 +201,15 @@
 | **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/array/main.cpp |
 | **Self Grade** | 100/100 |
 | **Notes** | I wasn't sure which part you wanted me to test so I tested my findSum function three times and my whosWho function once |
+
+### Assignment #8
+
+| **Name** | Kyra Apodaca|
+|:---|:---|
+| **Name** | HW - Struct |
+| **Description** | Create grading output file |
+| **Due Date** | 12/13/2022 |
+| **Status** | completed |
+| **Location** | https://github.com/kapodaca0316/CS1-knapodaca/blob/main/assignments/struct/main.cpp |
+| **Self Grade** | 95/100 |
+| **Notes** | I couldn't remember how to allign the values, so my output looks a little wonky. |

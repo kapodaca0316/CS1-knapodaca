@@ -1,7 +1,7 @@
 Johnny Lang 100 100 100 98
 Suzie Wang 95 85 75 80
-Allie Smith 85 85 80 82 
-George Michael 0 100 100 0 
+Allie Smith 85 85 80 82
+George Michael 0 100 100 0
 Henry Miller 75 85 82 90
 Billie Jeans 100 92 83 85
 Hillary Clinton 90 91 93 95
