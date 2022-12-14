@@ -24,7 +24,6 @@ F (59% and less)
 #include <algorithm>
 #include <vector>
 #include <iomanip>
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -80,6 +79,36 @@ struct student {
     char letterGrade;
 };
 
+string trim(string ss) {
+    int start = 0;
+    int end = ss.size() - 1;
+    string trimString;
+
+    if (ss.empty()) {
+        return ss;
+    }
+
+    for (int i = 0; i <= end; i++){
+        if (ss[i] != ' ') {
+            start = i;
+            break;
+        }
+    }
+
+    for (int i = end; end >= 0; i--) {
+        if (ss[i] != ' ') {
+            end = i;
+            break;
+        }
+    }
+
+    for (int i = start; i <= end; i++) {
+        trimString += ss[i];
+    }
+
+    return trimString;
+}
+
 vector<student> getStudents(vector<string> & students) {
     vector<student> studentList;
 
@@ -103,11 +132,11 @@ vector<student> getStudents(vector<string> & students) {
 
     do
         {
-            tests.push_back(stoi(newTest.substr(start, pos)));
+            tests.push_back(stoi(trim(newTest.substr(start, pos))));
             newTest = newTest.substr(pos + 1, newTest.length() - (pos + 1));
             pos = newTest.find(delimiter);
             if(pos == string::npos) {
-               tests.push_back(stoi(newTest));
+               tests.push_back(stoi(trim(newTest)));
             }
         } while (pos != string::npos);
 
