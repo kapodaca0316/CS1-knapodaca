@@ -15,22 +15,6 @@ string randomWord(vector<string> & secret) {
 }
 
 string display(string word) {
-    
-    /*size_t delimeter = word.find(" ");
-    string tmpstr1, tmpstr2;
-
-    if (delimeter != string::npos) {
-        tmpstr1 = word.substr(0, delimeter);
-        tmpstr2 = word.substr(delimeter + 1, word.length() - (delimeter + 1));
-    } else {
-        tmpstr1 = word;
-        tmpstr2 = "";
-    }
-
-    string hiddenWord1 (tmpstr1.length(), '-');
-    string hiddenWord2 (tmpstr2.length(), '-');
-
-    return hiddenWord1 + " " + hiddenWord2; */
 
     string delimiter = " ";
     size_t pos = word.find(delimiter);
