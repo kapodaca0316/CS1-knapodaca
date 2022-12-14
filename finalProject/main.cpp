@@ -24,14 +24,6 @@ screen display ex)
         skip
     Letter Bank:
 */
-
-// #include <iostream>
-// #include <iomanip>
-// #include <cstdio>
-// #include <string>
-// #include <fstream>
-// #include <vector>
-// #include <algorithm>
  
 #include "hangman.h"
 
