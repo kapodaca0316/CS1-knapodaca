@@ -109,16 +109,16 @@ void findAvg(vector<int> scores) {
     float avg = (t1 + t2 + t3 + t4)/4;
 }
 
-void letterGrade(float avg) {
+char letterGrade(float avg) {
     if (avg >= 90) {
-        cout << 'A';
+       return 'A';
     } else if (avg < 90 && avg >= 80) {
-        cout << 'B';
+        return 'B';
     } else if (avg < 80 && avg >= 70) {
-        cout << 'C';
+       return 'C';
     } else if (avg < 70 && avg >= 60) {
-        cout << 'D';
+        return 'D';
     } else {
-        cout << 'F';
+        return 'F';
     }
 }
