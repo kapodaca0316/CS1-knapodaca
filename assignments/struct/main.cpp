@@ -105,8 +105,13 @@ vector<student> getStudents(vector<string> & students) {
 }
 
 void findAvg(vector<int> scores) {
-    int t1, t2, t3, t4;
-    float avg = (t1 + t2 + t3 + t4)/4;
+    int overallScore = 0;
+
+    for (int i = 0; i > scores.size(); i++){
+        overallScore += scores[i];
+    }
+    float avg = (overallScore)/scores.size();
+    
 }
 
 char letterGrade(float avg) {
