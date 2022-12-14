@@ -70,7 +70,7 @@ struct student {
 };
 
 vector<student> getStudents(vector<string> & students) {
-
+    vector<student> studentList;
     for (int i = 0; i < students.size(); i ++) {
         size_t pos1 = students[i].find(" ");
         string firstName, lastName, strtests;
@@ -79,7 +79,7 @@ vector<student> getStudents(vector<string> & students) {
         firstName = students[i].substr(0, pos1);
         size_t word2 = students[i].find(" ", pos1 + 1);
         lastName = students[i].substr(pos1 + 1, (word2 - pos1));
-        names.push_back({firstName, lastName});
+        //studentList.push_back({firstName, lastName});
         strtests = students[i].substr(word2 + 1, students[i].length());
     }
 
@@ -99,19 +99,28 @@ vector<student> getStudents(vector<string> & students) {
             }
         } while (pos != string::npos);
 
-    grades.push_back(tests);    
+    student sStudent;
+    
+    sStudent.firstName = firstName;
+    sStudent.lastName = lastName;
+    sStudent.tests = tests;
+    
+    studentList.push_back(sStudent);    
+
+    return studentList;
 
 }
 }
 
-void findAvg(vector<int> scores) {
+float findAvg(vector<int> scores) {
     int overallScore = 0;
 
     for (int i = 0; i > scores.size(); i++){
         overallScore += scores[i];
     }
     float avg = (overallScore)/scores.size();
-    
+
+    return avg;
 }
 
 char letterGrade(float avg) {
