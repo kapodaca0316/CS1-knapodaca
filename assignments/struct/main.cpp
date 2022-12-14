@@ -27,19 +27,21 @@ F (59% and less)
 using namespace std;
 
 void makeArray(vector<string> &, const string);
-string student(vector<string> &);
+struct student;
 
 int main(int argc, char* argv[]) {
     vector<string> students;
+    vector<vector<string>> names;
+    vector<vector<int>> grades;
+    vector<student> studentGrades;
     string fin;
 
     cout << "Enter a file name: " << endl;
 
     cin >> fin;
-    //cout << fin << endl;
 
     makeArray(students, fin);
-    student(students);
+    //student(students);
 
 return 0;
 
@@ -61,10 +63,13 @@ void makeArray(vector<string> & students, const string fileInput) {
     cout << "File not found" << endl;
 }
 
+struct student {
+    string lastName;
+    string firstName;
+    vector<int> tests;
+};
 
-string student(vector<string> & students) {
-    vector<vector<string>> names;
-    vector<vector<int>> grades;
+vector<student> getStudents(vector<string> & students) {
 
     for (int i = 0; i < students.size(); i ++) {
         size_t pos1 = students[i].find(" ");
@@ -96,4 +101,24 @@ string student(vector<string> & students) {
 
     grades.push_back(tests);    
 
+}
+}
+
+void findAvg(vector<int> scores) {
+    int t1, t2, t3, t4;
+    float avg = (t1 + t2 + t3 + t4)/4;
+}
+
+void letterGrade(float avg) {
+    if (avg >= 90) {
+        cout << 'A';
+    } else if (avg < 90 && avg >= 80) {
+        cout << 'B';
+    } else if (avg < 80 && avg >= 70) {
+        cout << 'C';
+    } else if (avg < 70 && avg >= 60) {
+        cout << 'D';
+    } else {
+        cout << 'F';
+    }
 }
